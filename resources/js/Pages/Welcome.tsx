@@ -1,6 +1,6 @@
 import { PageProps } from '@/types';
 import { Head, Link } from '@inertiajs/react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
     ArrowRight,
     Calculator,
@@ -11,6 +11,8 @@ import {
     Scale,
     Shield,
     UserCheck,
+    Sun,
+    Moon,
 } from 'lucide-react';
 
 const criteriaNodes = [
@@ -60,6 +62,28 @@ export default function Welcome({
     laravelVersion,
     phpVersion,
 }: PageProps<{ laravelVersion: string; phpVersion: string }>) {
+    // Theme switcher state
+    const [theme, setTheme] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('theme') || 'dark';
+        }
+        return 'dark';
+    });
+
+    useEffect(() => {
+        const root = window.document.documentElement;
+        if (theme === 'dark') {
+            root.classList.add('dark');
+        } else {
+            root.classList.remove('dark');
+        }
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+    };
+
     useEffect(() => {
         if (!window.location.hash || window.location.hash === '#top') {
             window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
@@ -156,31 +180,46 @@ export default function Welcome({
                             </div>
                         </div>
 
-                        <nav className="flex items-center gap-2">
-                            {auth.user ? (
-                                <Link
-                                    href={route('dashboard')}
-                                    className="inline-flex min-h-11 items-center gap-2 rounded-md border border-[color:var(--champagne-edge)] bg-[var(--champagne)] px-4 text-xs font-bold text-[var(--ink)] transition hover:bg-[var(--champagne-bright)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--champagne-bright)]"
-                                >
-                                    Buka dashboard <ArrowRight className="h-3.5 w-3.5" />
-                                </Link>
-                            ) : (
-                                <>
+                        <div className="flex items-center gap-3">
+                            <button
+                                onClick={toggleTheme}
+                                className="h-9 w-9 rounded-md bg-[var(--panel)] hover:bg-[var(--panel)]/80 text-[var(--muted)] hover:text-coop-text border border-[color:var(--line)] flex items-center justify-center transition-all duration-200 active:scale-95 shrink-0"
+                                title={theme === 'dark' ? 'Ganti ke Mode Terang' : 'Ganti ke Mode Gelap'}
+                                aria-label="Toggle Theme"
+                            >
+                                {theme === 'dark' ? (
+                                    <Sun className="h-4.5 w-4.5 text-[var(--champagne-bright)]" />
+                                ) : (
+                                    <Moon className="h-4.5 w-4.5 text-[var(--blue)]" />
+                                )}
+                            </button>
+
+                            <nav className="flex items-center gap-2">
+                                {auth.user ? (
                                     <Link
-                                        href={route('login')}
-                                        className="inline-flex min-h-11 items-center rounded-md px-3 text-xs font-semibold text-[var(--muted-strong)] transition hover:bg-[var(--panel)] hover:text-coop-text focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--champagne-bright)]"
+                                        href={route('dashboard')}
+                                        className="inline-flex min-h-11 items-center gap-2 rounded-md border border-[color:var(--champagne-edge)] bg-[var(--champagne)] px-4 text-xs font-bold text-[var(--ink)] transition hover:bg-[var(--champagne-bright)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--champagne-bright)]"
                                     >
-                                        Masuk
+                                        Buka dashboard <ArrowRight className="h-3.5 w-3.5" />
                                     </Link>
-                                    <Link
-                                        href={route('register')}
-                                        className="hidden min-h-11 items-center rounded-md border border-[color:var(--line-strong)] bg-[var(--ink-2)] px-4 text-xs font-semibold text-coop-text transition hover:border-[var(--blue)] hover:bg-[var(--panel)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--champagne-bright)] sm:inline-flex"
-                                    >
-                                        Daftar akun
-                                    </Link>
-                                </>
-                            )}
-                        </nav>
+                                ) : (
+                                    <>
+                                        <Link
+                                            href={route('login')}
+                                            className="inline-flex min-h-11 items-center rounded-md px-3 text-xs font-semibold text-[var(--muted-strong)] transition hover:bg-[var(--panel)] hover:text-coop-text focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--champagne-bright)]"
+                                        >
+                                            Masuk
+                                        </Link>
+                                        <Link
+                                            href={route('register')}
+                                            className="hidden min-h-11 items-center rounded-md border border-[color:var(--line-strong)] bg-[var(--ink-2)] px-4 text-xs font-semibold text-coop-text transition hover:border-[var(--blue)] hover:bg-[var(--panel)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--champagne-bright)] sm:inline-flex"
+                                        >
+                                            Daftar akun
+                                        </Link>
+                                    </>
+                                )}
+                            </nav>
+                        </div>
                     </div>
                 </header>
 
