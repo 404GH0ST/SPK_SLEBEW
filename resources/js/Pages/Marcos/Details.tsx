@@ -360,16 +360,20 @@ export default function Details({ details, error }: DetailsProps) {
                             {/* Tab 4: Utility Values and Rankings */}
                             <TabsContent value="utility" className="mt-6 space-y-6">
                                 <div className="grid gap-6 sm:grid-cols-2">
-                                    <div className="group relative overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a] p-5 md:p-6  transition hover:border-[#aa7f31]/55 hover:border-[#aa7f31]/50">
-                                        <h4 className="text-xs font-semibold tracking-wider text-[#b2bfca] uppercase font-sans">S_AI (Jumlah Terbobot Ideal)</h4>
-                                        <div className="mt-3 text-3xl font-black text-[#64d8c1] font-mono">{details.s_ai.toFixed(6)}</div>
-                                        <p className="text-[11px] text-[#8294aa] mt-2 leading-relaxed">S_AI = Total nilai pada baris Solusi Ideal (AI)</p>
+                                    <div className="group relative overflow-hidden rounded bg-[#111827] border border-[#4f657a] p-5 transition hover:border-[#64d8c1]/45 shadow-sm">
+                                        <div className="border-b border-[#4f657a]/50 pb-2 mb-2">
+                                            <h4 className="text-xs font-semibold tracking-wider text-[#b2bfca] uppercase font-mono">S_AI (Jumlah Terbobot Ideal)</h4>
+                                        </div>
+                                        <div className="mt-2 text-2xl font-bold text-[#64d8c1] font-mono">{details.s_ai.toFixed(6)}</div>
+                                        <p className="text-xs text-[#8294aa] mt-1.5 leading-relaxed">S_AI = Total nilai pada baris Solusi Ideal (AI)</p>
                                     </div>
 
-                                    <div className="group relative overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a] p-5 md:p-6  transition hover:border-rose-700/55 hover:border-rose-700/50">
-                                        <h4 className="text-xs font-semibold tracking-wider text-[#b2bfca] uppercase font-sans">S_AAI (Jumlah Terbobot Anti-Ideal)</h4>
-                                        <div className="mt-3 text-3xl font-black text-rose-400 font-mono">{details.s_aai.toFixed(6)}</div>
-                                        <p className="text-[11px] text-[#8294aa] mt-2 leading-relaxed">S_AAI = Total nilai pada baris Solusi Anti-Ideal (AAI)</p>
+                                    <div className="group relative overflow-hidden rounded bg-[#111827] border border-[#4f657a] p-5 transition hover:border-rose-500/30 shadow-sm">
+                                        <div className="border-b border-[#4f657a]/50 pb-2 mb-2">
+                                            <h4 className="text-xs font-semibold tracking-wider text-[#b2bfca] uppercase font-mono">S_AAI (Jumlah Terbobot Anti-Ideal)</h4>
+                                        </div>
+                                        <div className="mt-2 text-2xl font-bold text-rose-400 font-mono">{details.s_aai.toFixed(6)}</div>
+                                        <p className="text-xs text-[#8294aa] mt-1.5 leading-relaxed">S_AAI = Total nilai pada baris Solusi Anti-Ideal (AAI)</p>
                                     </div>
                                 </div>
 

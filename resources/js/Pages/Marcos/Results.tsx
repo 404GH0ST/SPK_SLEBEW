@@ -232,40 +232,40 @@ export default function Results({ results, is_calculated, active_criteria = [] }
 
                         {/* Status Classification Reference */}
                         <div className="grid gap-4 sm:grid-cols-4">
-                            <div className="overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a] p-4.5  transition hover:border-[#64d8c1]/45">
-                                <div className="flex justify-between items-center">
-                                    <span className="text-xs font-semibold text-[#b2bfca] tracking-wider font-sans">SANGAT LAYAK</span>
+                            <div className="overflow-hidden rounded bg-[#111827] border border-[#4f657a] p-5 transition hover:border-[#64d8c1]/45 shadow-sm">
+                                <div className="flex justify-between items-center border-b border-[#4f657a]/50 pb-2.5 mb-2.5">
+                                    <span className="text-xs font-semibold text-[#b2bfca] tracking-wider font-mono">SANGAT LAYAK</span>
                                     <span className="h-2 w-2 rounded-full bg-[#64d8c1]"></span>
                                 </div>
-                                <div className="mt-3 text-lg font-black text-white font-mono">Ki &ge; 0.75</div>
-                                <p className="text-[10px] text-[#8294aa] mt-1 leading-relaxed">Sangat diprioritaskan mendapat pinjaman</p>
+                                <div className="mt-1 text-xl font-bold text-white font-mono">Ki &ge; 0.75</div>
+                                <p className="text-xs text-[#8294aa] mt-1.5 leading-relaxed">Sangat diprioritaskan mendapat pinjaman</p>
                             </div>
 
-                            <div className="overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a] p-4.5  transition hover:border-[#88a4ff]/45">
-                                <div className="flex justify-between items-center">
-                                    <span className="text-xs font-semibold text-[#b2bfca] tracking-wider font-sans">LAYAK</span>
+                            <div className="overflow-hidden rounded bg-[#111827] border border-[#4f657a] p-5 transition hover:border-[#88a4ff]/45 shadow-sm">
+                                <div className="flex justify-between items-center border-b border-[#4f657a]/50 pb-2.5 mb-2.5">
+                                    <span className="text-xs font-semibold text-[#b2bfca] tracking-wider font-mono">LAYAK</span>
                                     <span className="h-2 w-2 rounded-full bg-[#88a4ff]"></span>
                                 </div>
-                                <div className="mt-3 text-lg font-black text-white font-mono">0.60 &le; Ki &lt; 0.75</div>
-                                <p className="text-[10px] text-[#8294aa] mt-1 leading-relaxed">Memenuhi standar kelayakan koperasi</p>
+                                <div className="mt-1 text-xl font-bold text-white font-mono">0.60 &le; Ki &lt; 0.75</div>
+                                <p className="text-xs text-[#8294aa] mt-1.5 leading-relaxed">Memenuhi standar kelayakan koperasi</p>
                             </div>
 
-                            <div className="overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a] p-4.5  transition hover:border-amber-500/30">
-                                <div className="flex justify-between items-center">
-                                    <span className="text-xs font-semibold text-[#b2bfca] tracking-wider font-sans">DIPERTIMBANGKAN</span>
+                            <div className="overflow-hidden rounded bg-[#111827] border border-[#4f657a] p-5 transition hover:border-amber-500/30 shadow-sm">
+                                <div className="flex justify-between items-center border-b border-[#4f657a]/50 pb-2.5 mb-2.5">
+                                    <span className="text-xs font-semibold text-[#b2bfca] tracking-wider font-mono">DIPERTIMBANGKAN</span>
                                     <span className="h-2 w-2 rounded-full bg-[#d6b45f]"></span>
                                 </div>
-                                <div className="mt-3 text-lg font-black text-white font-mono">0.45 &le; Ki &lt; 0.60</div>
-                                <p className="text-[10px] text-[#8294aa] mt-1 leading-relaxed">Dapat disetujui dengan jaminan ketat</p>
+                                <div className="mt-1 text-xl font-bold text-white font-mono">0.45 &le; Ki &lt; 0.60</div>
+                                <p className="text-xs text-[#8294aa] mt-1.5 leading-relaxed">Dapat disetujui dengan jaminan ketat</p>
                             </div>
 
-                            <div className="overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a] p-4.5  transition hover:border-rose-500/30">
-                                <div className="flex justify-between items-center">
-                                    <span className="text-xs font-semibold text-[#b2bfca] tracking-wider font-sans">TIDAK PRIORITAS</span>
+                            <div className="overflow-hidden rounded bg-[#111827] border border-[#4f657a] p-5 transition hover:border-rose-500/30 shadow-sm">
+                                <div className="flex justify-between items-center border-b border-[#4f657a]/50 pb-2.5 mb-2.5">
+                                    <span className="text-xs font-semibold text-[#b2bfca] tracking-wider font-mono">TIDAK PRIORITAS</span>
                                     <span className="h-2 w-2 rounded-full bg-rose-500"></span>
                                 </div>
-                                <div className="mt-3 text-lg font-black text-white font-mono">Ki &lt; 0.45</div>
-                                <p className="text-[10px] text-[#8294aa] mt-1 leading-relaxed">Risiko tinggi, penundaan pinjaman</p>
+                                <div className="mt-1 text-xl font-bold text-white font-mono">Ki &lt; 0.45</div>
+                                <p className="text-xs text-[#8294aa] mt-1.5 leading-relaxed">Risiko tinggi, penundaan pinjaman</p>
                             </div>
                         </div>
                     </>
