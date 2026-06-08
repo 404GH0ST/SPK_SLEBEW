@@ -12,6 +12,7 @@ export default function Register() {
         email: '',
         password: '',
         password_confirmation: '',
+        role: 'petugas',
     });
 
     const submit: FormEventHandler = (e) => {
@@ -103,10 +104,29 @@ export default function Register() {
                     />
                 </div>
 
+                <div className="mt-4">
+                    <InputLabel htmlFor="role" value="Role Koperasi" />
+
+                    <select
+                        id="role"
+                        name="role"
+                        value={data.role}
+                        className="mt-1 block w-full rounded border-[#4f657a] bg-[#0b1020] text-slate-100 placeholder-[#8294aa] focus:border-[#d6b45f] focus:ring-[#d6b45f] focus:ring-opacity-50 text-sm py-2"
+                        onChange={(e) => setData('role', e.target.value)}
+                        required
+                    >
+                        <option value="petugas">Petugas Koperasi (Field Officer)</option>
+                        <option value="pakar">Pakar / Kepala Koperasi (Expert)</option>
+                        <option value="pimpinan">Pimpinan Koperasi (Manager)</option>
+                    </select>
+
+                    <InputError message={errors.role} className="mt-2" />
+                </div>
+
                 <div className="mt-4 flex items-center justify-end">
                     <Link
                         href={route('login')}
-                        className="rounded-md text-sm text-[#b2bfca] underline hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6b45f] focus:ring-offset-2 text-[#b2bfca] hover:text-white focus:ring-offset-[#0b1020]"
+                        className="rounded text-sm text-[#b2bfca] underline hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6b45f] focus:ring-offset-2 text-[#b2bfca] hover:text-white focus:ring-offset-[#0b1020]"
                     >
                         Already registered?
                     </Link>
