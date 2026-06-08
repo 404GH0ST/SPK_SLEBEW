@@ -164,7 +164,7 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                         Nasabah Terbaik: {results[0].alternative.name} ({results[0].alternative.code})
                                     </h3>
                                     <p className="text-sm text-[#b2bfca] leading-relaxed">
-                                        Berdasarkan perhitungan matematis SWARA-MARCOS, nasabah di atas menempati peringkat pertama dengan nilai utilitas tertinggi yaitu <strong className="text-[#64d8c1] font-semibold">{results[0].utility_value.toFixed(4)}</strong> dan diklasifikasikan sebagai <strong className="text-[#64d8c1] font-semibold">{results[0].status}</strong> menerima bantuan pinjaman koperasi.
+                                        Berdasarkan perhitungan matematis SWARA-MARCOS, nasabah di atas menempati peringkat pertama dengan nilai utilitas akhir (Kᵢ) tertinggi yaitu <strong className="text-[#64d8c1] font-semibold">{results[0].utility_value.toFixed(4)}</strong> dan diklasifikasikan sebagai <strong className="text-[#64d8c1] font-semibold">{results[0].status}</strong> menerima bantuan pinjaman koperasi.
                                     </p>
                                 </div>
                             </div>
@@ -177,7 +177,7 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                     <Trophy className="h-5 w-5 text-amber-500" /> Peringkat Kelayakan Penerima Pinjaman
                                 </h3>
                                 <p className="text-xs text-[#b2bfca] mt-1">
-                                    Urutan prioritas nasabah yang paling layak menerima pinjaman koperasi (diurutkan berdasarkan nilai utilitas tertinggi).
+                                    Urutan prioritas nasabah yang paling layak menerima pinjaman koperasi (diurutkan berdasarkan nilai utilitas akhir Kᵢ tertinggi).
                                 </p>
                             </div>
                             <div className="p-5 md:p-6">
@@ -200,10 +200,10 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                                     </TableHead>
                                                 ))}
                                                 <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">
-                                                    <span className="cursor-help underline decoration-[#4f657a] decoration-dotted" title="Si (Sum of Weighted Values): Total nilai tertimbang alternatif. Semakin besar semakin baik.">Nilai Si</span>
+                                                    <span className="cursor-help underline decoration-[#4f657a] decoration-dotted" title="Si (Sum of Weighted Values): Total nilai tertimbang alternatif. Semakin besar semakin baik.">Nilai Sᵢ</span>
                                                 </TableHead>
                                                 <TableHead className="text-center bg-[#123b38] text-xs font-bold uppercase tracking-wider text-[#64d8c1] py-2.5 border-l border-[#4f657a]">
-                                                    <span className="cursor-help underline decoration-[#64d8c1]/40 decoration-dotted" title="Nilai Utilitas Akhir (K): Berada di rentang 0 hingga 1. Semakin mendekati 1 semakin direkomendasikan.">Nilai Utilitas</span>
+                                                    <span className="cursor-help underline decoration-[#64d8c1]/40 decoration-dotted" title="Nilai Utilitas Akhir (Kᵢ): Berada di rentang 0 hingga 1. Semakin mendekati 1 semakin direkomendasikan.">Nilai Utilitas (Kᵢ)</span>
                                                 </TableHead>
                                                 <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 pr-6 font-sans">Status Kelayakan</TableHead>
                                             </TableRow>
@@ -241,7 +241,7 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                     <span className="text-xs font-semibold text-[#b2bfca] tracking-wider font-mono">SANGAT LAYAK</span>
                                     <span className="h-2 w-2 rounded-full bg-[#64d8c1]"></span>
                                 </div>
-                                <div className="mt-1 text-xl font-bold text-white font-mono">Ki &ge; 0.75</div>
+                                <div className="mt-1 text-xl font-bold text-white font-mono">Kᵢ &ge; 0.75</div>
                                 <p className="text-xs text-[#8294aa] mt-1.5 leading-relaxed">Sangat diprioritaskan mendapat pinjaman</p>
                             </div>
 
@@ -250,7 +250,7 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                     <span className="text-xs font-semibold text-[#b2bfca] tracking-wider font-mono">LAYAK</span>
                                     <span className="h-2 w-2 rounded-full bg-[#88a4ff]"></span>
                                 </div>
-                                <div className="mt-1 text-xl font-bold text-white font-mono">0.60 &le; Ki &lt; 0.75</div>
+                                <div className="mt-1 text-xl font-bold text-white font-mono">0.60 &le; Kᵢ &lt; 0.75</div>
                                 <p className="text-xs text-[#8294aa] mt-1.5 leading-relaxed">Memenuhi standar kelayakan koperasi</p>
                             </div>
 
@@ -259,7 +259,7 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                     <span className="text-xs font-semibold text-[#b2bfca] tracking-wider font-mono">DIPERTIMBANGKAN</span>
                                     <span className="h-2 w-2 rounded-full bg-[#d6b45f]"></span>
                                 </div>
-                                <div className="mt-1 text-xl font-bold text-white font-mono">0.45 &le; Ki &lt; 0.60</div>
+                                <div className="mt-1 text-xl font-bold text-white font-mono">0.45 &le; Kᵢ &lt; 0.60</div>
                                 <p className="text-xs text-[#8294aa] mt-1.5 leading-relaxed">Dapat disetujui dengan jaminan ketat</p>
                             </div>
 
@@ -268,7 +268,7 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                     <span className="text-xs font-semibold text-[#b2bfca] tracking-wider font-mono">TIDAK PRIORITAS</span>
                                     <span className="h-2 w-2 rounded-full bg-rose-500"></span>
                                 </div>
-                                <div className="mt-1 text-xl font-bold text-white font-mono">Ki &lt; 0.45</div>
+                                <div className="mt-1 text-xl font-bold text-white font-mono">Kᵢ &lt; 0.45</div>
                                 <p className="text-xs text-[#8294aa] mt-1.5 leading-relaxed">Risiko tinggi, penundaan pinjaman</p>
                             </div>
                         </div>
@@ -280,16 +280,16 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                             </h4>
                             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-xs text-[#b2bfca]">
                                 <div className="p-3.5 rounded bg-[#0b1020] border border-[#4f657a]/40 transition duration-300 hover:border-[#64d8c1]/40 hover:bg-[#152133]/25 shadow-sm">
-                                    <strong className="text-[#64d8c1] block mb-1">Si (Sum of Weighted Values)</strong>
+                                    <strong className="text-[#64d8c1] block mb-1">Sᵢ (Sum of Weighted Values)</strong>
                                     Total nilai tertimbang alternatif. Semakin besar nilainya, semakin baik kinerja nasabah tersebut secara keseluruhan terhadap kriteria.
                                 </div>
                                 <div className="p-3.5 rounded bg-[#0b1020] border border-[#4f657a]/40 transition duration-300 hover:border-[#88a4ff]/40 hover:bg-[#152133]/25 shadow-sm">
-                                    <strong className="text-[#88a4ff] block mb-1">Nilai Utilitas K (Hasil Akhir)</strong>
-                                    Kombinasi akhir derajat dan fungsi utilitas (berkisar antara 0 hingga 1). **Nasabah dengan Nilai Utilitas tertinggi berada di ranking teratas dan paling layak diprioritaskan mendapat pinjaman.**
+                                    <strong className="text-[#88a4ff] block mb-1">Nilai Utilitas Kᵢ (Hasil Akhir)</strong>
+                                    Kombinasi akhir derajat utilitas dan fungsi utilitas substitusi (berkisar antara 0 hingga 1). **Nasabah dengan Nilai Utilitas Kᵢ tertinggi berada di ranking teratas dan paling layak diprioritaskan mendapat pinjaman.**
                                 </div>
                                 <div className="p-3.5 rounded bg-[#0b1020] border border-[#4f657a]/40 transition duration-300 hover:border-amber-500/40 hover:bg-[#152133]/25 shadow-sm sm:col-span-2 lg:col-span-1">
                                     <strong className="text-amber-400 block mb-1">Status Kelayakan</strong>
-                                    Ditentukan berdasarkan nilai utilitas (Ki). **Sangat Layak** (Ki &ge; 0.75), **Layak** (0.60 &le; Ki &lt; 0.75), **Dipertimbangkan** (0.45 &le; Ki &lt; 0.60), **Tidak Prioritas** (Ki &lt; 0.45).
+                                    Ditentukan berdasarkan nilai utilitas akhir (Kᵢ). **Sangat Layak** (Kᵢ &ge; 0.75), **Layak** (0.60 &le; Kᵢ &lt; 0.75), **Dipertimbangkan** (0.45 &le; Kᵢ &lt; 0.60), **Tidak Prioritas** (Kᵢ &lt; 0.45).
                                 </div>
                             </div>
                         </div>
