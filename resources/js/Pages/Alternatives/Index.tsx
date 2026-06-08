@@ -146,9 +146,9 @@ export default function Index({ alternatives }: IndexProps) {
                 </div>
 
                 {/* Alternatives Table Card */}
-                <div className="rounded-lg bg-[#111827] border border-[#4f657a] ">
+                <div className="rounded bg-[#111827] border border-[#4f657a] ">
                     <div className="p-5">
-                        <div className="overflow-x-auto rounded-md border border-[#4f657a] bg-[#0b1020]">
+                        <div className="overflow-x-auto rounded border border-[#4f657a] bg-[#0b1020]">
                             <Table>
                                 <TableHeader className="bg-[#111827]">
                                     <TableRow className="border-[#4f657a] hover:bg-transparent">
@@ -224,7 +224,7 @@ export default function Index({ alternatives }: IndexProps) {
 
             {/* Add / Edit Dialog */}
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
-                <DialogContent className="bg-[#111827] border border-[#4f657a] text-slate-100 max-w-md rounded-lg  p-6">
+                <DialogContent className="bg-[#111827] border border-[#4f657a] text-slate-100 max-w-md rounded  p-6">
                     <DialogHeader>
                         <DialogTitle className="text-lg font-bold text-white">
                             {editingAlternative ? 'Ubah Data Nasabah' : 'Tambah Nasabah Baru'}
@@ -333,7 +333,7 @@ export default function Index({ alternatives }: IndexProps) {
 
             {/* Confirm Delete Dialog */}
             <Dialog open={isConfirmDeleteOpen} onOpenChange={setIsConfirmDeleteOpen}>
-                <DialogContent className="bg-[#111827] border border-[#4f657a] text-slate-100 max-w-sm rounded-lg  p-6">
+                <DialogContent className="bg-[#111827] border border-[#4f657a] text-slate-100 max-w-sm rounded  p-6">
                     <DialogHeader>
                         <DialogTitle className="text-white flex items-center gap-2 text-base font-bold">
                             <ShieldAlert className="h-4 w-4 text-rose-500" /> Hapus Nasabah?

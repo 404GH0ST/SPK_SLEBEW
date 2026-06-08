@@ -131,10 +131,10 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
 
             <div className="space-y-6 pb-6">
                 {/* Method Explanation */}
-                <div className="rounded-lg bg-[#111827] border border-[#4f657a] p-5 ">
+                <div className="rounded bg-[#111827] border border-[#4f657a] p-5 ">
                     <div className="space-y-3">
                         <h3 className="text-base font-bold text-white flex items-center gap-2">
-                            <span className="p-1 rounded-md bg-[#123b38] text-[#64d8c1] border border-[#64d8c1]/30">
+                            <span className="p-1 rounded bg-[#123b38] text-[#64d8c1] border border-[#64d8c1]/30">
                                 <Info className="h-4 w-4" />
                             </span>
                             Mengenal Metode SWARA
@@ -156,7 +156,7 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
 
                 <div className="grid gap-6 lg:grid-cols-2">
                     {/* Current Weights View */}
-                    <div className="rounded-lg bg-[#111827] border border-[#4f657a]  flex flex-col">
+                    <div className="rounded bg-[#111827] border border-[#4f657a]  flex flex-col">
                         <div className="border-b border-[#4f657a] p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                             <div>
                                 <h3 className="text-base font-bold text-white">Bobot Hasil Perhitungan Saat Ini</h3>
@@ -220,7 +220,7 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
                     </div>
 
                     {/* Pakar Input Panel */}
-                    <div className="rounded-lg bg-[#111827] border border-[#4f657a]  flex flex-col">
+                    <div className="rounded bg-[#111827] border border-[#4f657a]  flex flex-col">
                         <div className="border-b border-[#4f657a] p-5">
                             <h3 className="text-base font-bold text-white flex items-center gap-2">
                                 <ArrowDownAZ className="h-4.5 w-4.5 text-[#64d8c1]" /> Atur Tingkat Kepentingan (Pakar)

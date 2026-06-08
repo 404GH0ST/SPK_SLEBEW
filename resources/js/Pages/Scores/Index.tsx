@@ -124,9 +124,9 @@ export default function Index({ alternatives, active_criteria }: ScoresProps) {
 
             <div className="space-y-6 pb-6">
                 {/* Status Alert */}
-                <div className="rounded-lg bg-[#111827] border border-[#4f657a] p-5 md:p-6 ">
+                <div className="rounded bg-[#111827] border border-[#4f657a] p-5 md:p-6 ">
                     <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                        <span className="p-1 rounded-md bg-[#123b38] text-[#64d8c1] border border-[#64d8c1]/30">
+                        <span className="p-1 rounded bg-[#123b38] text-[#64d8c1] border border-[#64d8c1]/30">
                             <Sparkles className="h-4 w-4" />
                         </span>
                         Kelayakan Perhitungan
@@ -137,9 +137,9 @@ export default function Index({ alternatives, active_criteria }: ScoresProps) {
                 </div>
 
                 {/* Score Matrix Card */}
-                <div className="rounded-lg bg-[#111827] border border-[#4f657a] ">
+                <div className="rounded bg-[#111827] border border-[#4f657a] ">
                     <div className="p-5 md:p-6">
-                        <div className="overflow-x-auto rounded-md border border-[#4f657a]">
+                        <div className="overflow-x-auto rounded border border-[#4f657a]">
                             <Table>
                                 <TableHeader className="bg-[#111827] hover:bg-[#111827]">
                                     <TableRow className="border-[#4f657a] hover:bg-transparent">
@@ -224,7 +224,7 @@ export default function Index({ alternatives, active_criteria }: ScoresProps) {
 
             {/* Input / Edit Scores Dialog */}
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
-                <DialogContent className="bg-[#111827] border border-[#4f657a] text-slate-100 max-w-md rounded-lg  p-6">
+                <DialogContent className="bg-[#111827] border border-[#4f657a] text-slate-100 max-w-md rounded  p-6">
                     <DialogHeader>
                         <DialogTitle className="text-lg font-bold text-white font-sans tracking-tight">
                             Input Nilai Nasabah: {selectedAlt?.name} ({selectedAlt?.code})

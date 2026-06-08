@@ -63,7 +63,7 @@ export default function Dashboard({ stats, top_rankings }: DashboardProps) {
 
             <div className="space-y-6 pb-6">
                 {/* Welcome Card */}
-                <div className="relative overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a]/70 p-6 md:p-8">
+                <div className="relative overflow-hidden rounded bg-[#111827] border border-[#4f657a]/70 p-6 md:p-8">
                     <div className="relative z-10 space-y-3">
                         <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[10px] font-semibold uppercase tracking-wider text-[#f2d98a] bg-[#152133] border border-[#d6b45f]/45">
                             <Shield className="h-3 w-3" /> Sistem Pendukung Keputusan
@@ -79,7 +79,7 @@ export default function Dashboard({ stats, top_rankings }: DashboardProps) {
 
                 {/* Stats Grid */}
                 <div className="grid gap-5 sm:grid-cols-3">
-                    <div className="group relative overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a]/70 p-5 transition-colors hover:border-[#d6b45f]/70">
+                    <div className="group relative overflow-hidden rounded bg-[#111827] border border-[#4f657a]/70 p-5 transition-colors hover:border-[#d6b45f]/70">
                         <div className="flex items-center justify-between">
                             <span className="text-xs font-semibold tracking-wider text-[#b2bfca] uppercase">Jumlah Kriteria</span>
                             <div className="p-2 rounded-md bg-[#152133] border border-[#d6b45f]/40 text-[#f2d98a] transition-all">
@@ -92,7 +92,7 @@ export default function Dashboard({ stats, top_rankings }: DashboardProps) {
                         </div>
                     </div>
 
-                    <div className="group relative overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a]/70 p-5 transition-colors hover:border-[#64d8c1]/70">
+                    <div className="group relative overflow-hidden rounded bg-[#111827] border border-[#4f657a]/70 p-5 transition-colors hover:border-[#64d8c1]/70">
                         <div className="flex items-center justify-between">
                             <span className="text-xs font-semibold tracking-wider text-[#b2bfca] uppercase">Jumlah Nasabah</span>
                             <div className="p-2 rounded-md bg-[#123b38] border border-[#64d8c1]/35 text-[#64d8c1] transition-all">
@@ -105,7 +105,7 @@ export default function Dashboard({ stats, top_rankings }: DashboardProps) {
                         </div>
                     </div>
 
-                    <div className="group relative overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a]/70 p-5 transition-colors hover:border-[#88a4ff]/70">
+                    <div className="group relative overflow-hidden rounded bg-[#111827] border border-[#4f657a]/70 p-5 transition-colors hover:border-[#88a4ff]/70">
                         <div className="flex items-center justify-between">
                             <span className="text-xs font-semibold tracking-wider text-[#b2bfca] uppercase">Nasabah Dinilai Lengkap</span>
                             <div className="p-2 rounded-md bg-[#111827] border border-[#88a4ff]/35 text-[#88a4ff] transition-all">
@@ -121,7 +121,7 @@ export default function Dashboard({ stats, top_rankings }: DashboardProps) {
 
                 <div className="grid gap-6 lg:grid-cols-3">
                     {/* Top Rankings Table */}
-                    <div className="lg:col-span-2 overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a]/70">
+                    <div className="lg:col-span-2 overflow-hidden rounded bg-[#111827] border border-[#4f657a]/70">
                         <div className="border-b border-[#4f657a]/50 p-5">
                             <div className="flex items-center gap-2.5">
                                 <div className="p-2 rounded-md bg-[#152133] border border-[#d6b45f]/45 text-[#f2d98a]">
@@ -179,7 +179,7 @@ export default function Dashboard({ stats, top_rankings }: DashboardProps) {
                     </div>
 
                     {/* Quick Actions Card */}
-                    <div className="overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a]/70 flex flex-col">
+                    <div className="overflow-hidden rounded bg-[#111827] border border-[#4f657a]/70 flex flex-col">
                         <div className="border-b border-[#4f657a]/50 p-5">
                             <h3 className="text-base font-bold text-white">Aktivitas Cepat</h3>
                             <p className="text-xs text-[#b2bfca] mt-0.5">

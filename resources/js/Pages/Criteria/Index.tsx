@@ -120,9 +120,9 @@ export default function Index({ criteria }: IndexProps) {
 
             <div className="space-y-6 pb-6">
                 {/* Intro Card */}
-                <div className="rounded-lg bg-[#111827] border border-[#4f657a] p-5 ">
+                <div className="rounded bg-[#111827] border border-[#4f657a] p-5 ">
                     <h3 className="text-base font-bold text-white flex items-center gap-2">
-                        <span className="p-1 rounded-md bg-[#123b38] text-[#64d8c1] border border-[#64d8c1]/30">
+                        <span className="p-1 rounded bg-[#123b38] text-[#64d8c1] border border-[#64d8c1]/30">
                             <ShieldAlert className="h-4 w-4" />
                         </span>
                         Panduan Penggunaan Kriteria
@@ -135,9 +135,9 @@ export default function Index({ criteria }: IndexProps) {
                 </div>
 
                 {/* Criteria Table Card */}
-                <div className="rounded-lg bg-[#111827] border border-[#4f657a] ">
+                <div className="rounded bg-[#111827] border border-[#4f657a] ">
                     <div className="p-5">
-                        <div className="overflow-x-auto rounded-md border border-[#4f657a] bg-[#0b1020]">
+                        <div className="overflow-x-auto rounded border border-[#4f657a] bg-[#0b1020]">
                             <Table>
                                 <TableHeader className="bg-[#111827]">
                                     <TableRow className="border-[#4f657a] hover:bg-transparent">
@@ -214,7 +214,7 @@ export default function Index({ criteria }: IndexProps) {
 
             {/* Add / Edit Dialog */}
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
-                <DialogContent className="bg-[#111827] border border-[#4f657a] text-slate-100 max-w-md rounded-lg  p-6">
+                <DialogContent className="bg-[#111827] border border-[#4f657a] text-slate-100 max-w-md rounded  p-6">
                     <DialogHeader>
                         <DialogTitle className="text-lg font-bold text-white">
                             {editingCriterion ? 'Ubah Kriteria' : 'Tambah Kriteria Baru'}
@@ -327,7 +327,7 @@ export default function Index({ criteria }: IndexProps) {
 
             {/* Confirm Delete Dialog */}
             <Dialog open={isConfirmDeleteOpen} onOpenChange={setIsConfirmDeleteOpen}>
-                <DialogContent className="bg-[#111827] border border-[#4f657a] text-slate-100 max-w-sm rounded-lg  p-6">
+                <DialogContent className="bg-[#111827] border border-[#4f657a] text-slate-100 max-w-sm rounded  p-6">
                     <DialogHeader>
                         <DialogTitle className="text-white flex items-center gap-2 text-base font-bold">
                             <ShieldAlert className="h-4 w-4 text-rose-500" /> Hapus Kriteria?
