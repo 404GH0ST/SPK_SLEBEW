@@ -454,19 +454,19 @@ export default function Details({ details, error }: DetailsProps) {
                                                 <HelpCircle className="h-4 w-4 text-[#d6b45f]" /> Legenda & Cara Membaca Parameter MARCOS
                                             </h4>
                                             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-xs text-[#b2bfca]">
-                                                <div className="p-3.5 rounded bg-[#111827] border border-[#4f657a]/40">
+                                                <div className="p-3.5 rounded bg-[#111827] border border-[#4f657a]/40 transition duration-300 hover:border-[#64d8c1]/40 hover:bg-[#152133]/25 shadow-sm">
                                                     <strong className="text-[#64d8c1] block mb-1">Si (Sum of Weighted Values)</strong>
                                                     Total nilai tertimbang alternatif. Semakin besar nilainya, semakin baik kinerja nasabah tersebut secara keseluruhan terhadap kriteria.
                                                 </div>
-                                                <div className="p-3.5 rounded bg-[#111827] border border-[#4f657a]/40">
+                                                <div className="p-3.5 rounded bg-[#111827] border border-[#4f657a]/40 transition duration-300 hover:border-[#88a4ff]/40 hover:bg-[#152133]/25 shadow-sm">
                                                     <strong className="text-[#88a4ff] block mb-1">Ki- & Ki+ (Derajat Utilitas)</strong>
                                                     Mengukur seberapa jauh alternatif dari Solusi Anti-Ideal (terburuk, Ki-) dan seberapa dekat dengan Solusi Ideal (terbaik, Ki+).
                                                 </div>
-                                                <div className="p-3.5 rounded bg-[#111827] border border-[#4f657a]/40">
+                                                <div className="p-3.5 rounded bg-[#111827] border border-[#4f657a]/40 transition duration-300 hover:border-amber-500/40 hover:bg-[#152133]/25 shadow-sm">
                                                     <strong className="text-amber-400 block mb-1">f(Ki-) & f(Ki+) (Fungsi Utilitas)</strong>
                                                     Nilai pembanding utilitas relatif terhadap batas terburuk dan terbaik untuk diakumulasi menjadi nilai keputusan tunggal.
                                                 </div>
-                                                <div className="p-3.5 rounded bg-[#111827] border border-[#4f657a]/40 sm:col-span-2 lg:col-span-3">
+                                                <div className="p-3.5 rounded bg-[#111827] border border-[#4f657a]/40 transition duration-300 hover:border-[#d6b45f]/40 hover:bg-[#152133]/25 shadow-sm sm:col-span-2 lg:col-span-3">
                                                     <strong className="text-white block mb-1">Nilai Utilitas K (Hasil Keputusan Akhir)</strong>
                                                     Kombinasi akhir derajat dan fungsi utilitas (berkisar antara 0 hingga 1). **Nasabah dengan Nilai Utilitas tertinggi berada di ranking teratas dan paling layak diprioritaskan mendapat pinjaman.**
                                                 </div>

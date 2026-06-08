@@ -279,15 +279,15 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                 <HelpCircle className="h-4 w-4 text-[#d6b45f]" /> Legenda & Cara Membaca Parameter MARCOS
                             </h4>
                             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-xs text-[#b2bfca]">
-                                <div className="p-3.5 rounded bg-[#0b1020] border border-[#4f657a]/40">
+                                <div className="p-3.5 rounded bg-[#0b1020] border border-[#4f657a]/40 transition duration-300 hover:border-[#64d8c1]/40 hover:bg-[#152133]/25 shadow-sm">
                                     <strong className="text-[#64d8c1] block mb-1">Si (Sum of Weighted Values)</strong>
                                     Total nilai tertimbang alternatif. Semakin besar nilainya, semakin baik kinerja nasabah tersebut secara keseluruhan terhadap kriteria.
                                 </div>
-                                <div className="p-3.5 rounded bg-[#0b1020] border border-[#4f657a]/40">
+                                <div className="p-3.5 rounded bg-[#0b1020] border border-[#4f657a]/40 transition duration-300 hover:border-[#88a4ff]/40 hover:bg-[#152133]/25 shadow-sm">
                                     <strong className="text-[#88a4ff] block mb-1">Nilai Utilitas K (Hasil Akhir)</strong>
                                     Kombinasi akhir derajat dan fungsi utilitas (berkisar antara 0 hingga 1). **Nasabah dengan Nilai Utilitas tertinggi berada di ranking teratas dan paling layak diprioritaskan mendapat pinjaman.**
                                 </div>
-                                <div className="p-3.5 rounded bg-[#0b1020] border border-[#4f657a]/40 sm:col-span-2 lg:col-span-1">
+                                <div className="p-3.5 rounded bg-[#0b1020] border border-[#4f657a]/40 transition duration-300 hover:border-amber-500/40 hover:bg-[#152133]/25 shadow-sm sm:col-span-2 lg:col-span-1">
                                     <strong className="text-amber-400 block mb-1">Status Kelayakan</strong>
                                     Ditentukan berdasarkan nilai utilitas (Ki). **Sangat Layak** (Ki &ge; 0.75), **Layak** (0.60 &le; Ki &lt; 0.75), **Dipertimbangkan** (0.45 &le; Ki &lt; 0.60), **Tidak Prioritas** (Ki &lt; 0.45).
                                 </div>

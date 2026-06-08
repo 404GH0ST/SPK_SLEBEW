@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, useForm, usePage } from '@inertiajs/react';
-import { Edit3, CheckCircle, AlertTriangle, Sparkles } from 'lucide-react';
+import { Edit3, CheckCircle, AlertTriangle, Sparkles, Check, X } from 'lucide-react';
 import { Button } from '@/Components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/Components/ui/table';
 import { Input } from '@/Components/ui/input';
@@ -256,9 +256,9 @@ export default function Index({ alternatives, active_criteria }: ScoresProps) {
                                                                         type="button"
                                                                         onClick={() => handleInlineSubmit(alt.id, index)}
                                                                         disabled={processing}
-                                                                        className="bg-[#123b38] hover:bg-[#184e49] text-[#64d8c1] border border-[#64d8c1]/35 text-[11px] h-7 px-2.5 rounded justify-center font-bold"
+                                                                        className="bg-[#123b38] hover:bg-[#184e49] text-[#64d8c1] border border-[#64d8c1]/35 text-[11px] h-7 px-2.5 rounded justify-center font-bold transition-all duration-200 active:scale-95 flex items-center gap-1"
                                                                     >
-                                                                        Simpan
+                                                                        <Check className="h-3.5 w-3.5" /> Simpan
                                                                     </Button>
                                                                     <Button
                                                                         type="button"
@@ -267,9 +267,9 @@ export default function Index({ alternatives, active_criteria }: ScoresProps) {
                                                                             reset();
                                                                             clearErrors();
                                                                         }}
-                                                                        className="bg-rose-950/20 hover:bg-rose-900/30 text-rose-400 border border-rose-900/50 text-[11px] h-7 px-2.5 rounded justify-center font-bold"
+                                                                        className="bg-rose-950/20 hover:bg-rose-900/30 text-rose-400 border border-rose-900/50 text-[11px] h-7 px-2.5 rounded justify-center font-bold transition-all duration-200 active:scale-95 flex items-center gap-1"
                                                                     >
-                                                                        Batal
+                                                                        <X className="h-3.5 w-3.5" /> Batal
                                                                     </Button>
                                                                 </div>
                                                             ) : (
