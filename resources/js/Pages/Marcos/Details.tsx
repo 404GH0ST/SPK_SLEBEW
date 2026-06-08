@@ -390,12 +390,24 @@ export default function Details({ details, error }: DetailsProps) {
                                                 <TableHeader className="bg-[#111827]">
                                                     <TableRow className="border-[#4f657a] hover:bg-transparent">
                                                         <TableHead className="text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-sans">Nasabah</TableHead>
-                                                        <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">Si (SUM Vij)</TableHead>
-                                                        <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">Ki-</TableHead>
-                                                        <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">Ki+</TableHead>
-                                                        <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">f(Ki-)</TableHead>
-                                                        <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">f(Ki+)</TableHead>
-                                                        <TableHead className="text-center bg-[#123b38] text-xs font-bold uppercase tracking-wider text-[#64d8c1] py-2.5 border-l border-[#4f657a]">Nilai Utilitas</TableHead>
+                                                        <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">
+                                                            <span className="cursor-help underline decoration-[#4f657a] decoration-dotted" title="Si (Sum of Weighted Values): Total nilai tertimbang alternatif. Semakin besar semakin baik.">Si</span>
+                                                        </TableHead>
+                                                        <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">
+                                                            <span className="cursor-help underline decoration-[#4f657a] decoration-dotted" title="Ki- (Derajat Utilitas terhadap Anti-Ideal): Jarak relatif dari solusi terburuk. Semakin besar semakin baik.">Ki-</span>
+                                                        </TableHead>
+                                                        <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">
+                                                            <span className="cursor-help underline decoration-[#4f657a] decoration-dotted" title="Ki+ (Derajat Utilitas terhadap Ideal): Kedekatan relatif dengan solusi terbaik. Semakin besar semakin baik.">Ki+</span>
+                                                        </TableHead>
+                                                        <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">
+                                                            <span className="cursor-help underline decoration-[#4f657a] decoration-dotted" title="f(Ki-) (Fungsi Utilitas terhadap Anti-Ideal): Nilai akumulasi utilitas relatif batas terburuk.">f(Ki-)</span>
+                                                        </TableHead>
+                                                        <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">
+                                                            <span className="cursor-help underline decoration-[#4f657a] decoration-dotted" title="f(Ki+) (Fungsi Utilitas terhadap Ideal): Nilai akumulasi utilitas relatif batas terbaik.">f(Ki+)</span>
+                                                        </TableHead>
+                                                        <TableHead className="text-center bg-[#123b38] text-xs font-bold uppercase tracking-wider text-[#64d8c1] py-2.5 border-l border-[#4f657a]">
+                                                            <span className="cursor-help underline decoration-[#64d8c1]/40 decoration-dotted" title="Nilai Utilitas Akhir (K): Berada di rentang 0 hingga 1. Semakin mendekati 1 semakin direkomendasikan.">Nilai Utilitas</span>
+                                                        </TableHead>
                                                         <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-sans">Status</TableHead>
                                                         <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 pr-6 font-sans">Rank</TableHead>
                                                     </TableRow>
@@ -420,7 +432,7 @@ export default function Details({ details, error }: DetailsProps) {
                                                                 <TableCell className="text-center font-mono bg-[#123b38] text-[#64d8c1] font-extrabold text-sm py-2.5 border-l border-[#4f657a]">{utilVal.toFixed(4)}</TableCell>
                                                                 <TableCell className="text-center py-2.5">{getStatusBadge(rankInfo.status)}</TableCell>
                                                                 <TableCell className="text-center font-bold text-white bg-[#0b1020]/10 py-2.5 pr-6">
-                                                                    <span className={`inline-flex items-center justify-center h-6 w-6 rounded-md text-xs font-semibold ${
+                                                                    <span className={`inline-flex items-center justify-center h-6 w-6 rounded text-xs font-semibold ${
                                                                         rankInfo.rank === 1 ? 'bg-[#d6b45f]/10 text-amber-400 border border-amber-500/20' :
                                                                         rankInfo.rank === 2 ? 'bg-[#6f8295]/10 text-[#b2bfca] border border-[#6f8295]/25' :
                                                                         rankInfo.rank === 3 ? 'bg-amber-700/10 text-amber-600 border border-amber-700/20' :
@@ -434,6 +446,31 @@ export default function Details({ details, error }: DetailsProps) {
                                                     })}
                                                 </TableBody>
                                             </Table>
+                                        </div>
+
+                                        {/* Parameter Explanations */}
+                                        <div className="mt-6 p-5 rounded bg-[#0b1020] border border-[#4f657a] space-y-4">
+                                            <h4 className="text-sm font-bold text-white flex items-center gap-2">
+                                                <HelpCircle className="h-4 w-4 text-[#d6b45f]" /> Legenda & Cara Membaca Parameter MARCOS
+                                            </h4>
+                                            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-xs text-[#b2bfca]">
+                                                <div className="p-3.5 rounded bg-[#111827] border border-[#4f657a]/40">
+                                                    <strong className="text-[#64d8c1] block mb-1">Si (Sum of Weighted Values)</strong>
+                                                    Total nilai tertimbang alternatif. Semakin besar nilainya, semakin baik kinerja nasabah tersebut secara keseluruhan terhadap kriteria.
+                                                </div>
+                                                <div className="p-3.5 rounded bg-[#111827] border border-[#4f657a]/40">
+                                                    <strong className="text-[#88a4ff] block mb-1">Ki- & Ki+ (Derajat Utilitas)</strong>
+                                                    Mengukur seberapa jauh alternatif dari Solusi Anti-Ideal (terburuk, Ki-) dan seberapa dekat dengan Solusi Ideal (terbaik, Ki+).
+                                                </div>
+                                                <div className="p-3.5 rounded bg-[#111827] border border-[#4f657a]/40">
+                                                    <strong className="text-amber-400 block mb-1">f(Ki-) & f(Ki+) (Fungsi Utilitas)</strong>
+                                                    Nilai pembanding utilitas relatif terhadap batas terburuk dan terbaik untuk diakumulasi menjadi nilai keputusan tunggal.
+                                                </div>
+                                                <div className="p-3.5 rounded bg-[#111827] border border-[#4f657a]/40 sm:col-span-2 lg:col-span-3">
+                                                    <strong className="text-white block mb-1">Nilai Utilitas K (Hasil Keputusan Akhir)</strong>
+                                                    Kombinasi akhir derajat dan fungsi utilitas (berkisar antara 0 hingga 1). **Nasabah dengan Nilai Utilitas tertinggi berada di ranking teratas dan paling layak diprioritaskan mendapat pinjaman.**
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, usePage } from '@inertiajs/react';
-import { Trophy, FileText, Download, AlertCircle, ArrowRight, Award, Medal } from 'lucide-react';
+import { Trophy, FileText, Download, AlertCircle, ArrowRight, Award, Medal, HelpCircle } from 'lucide-react';
 import { Button } from '@/Components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/Components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/Components/ui/table';
@@ -199,8 +199,12 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                                         </span>
                                                     </TableHead>
                                                 ))}
-                                                <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">Nilai Si</TableHead>
-                                                <TableHead className="text-center bg-[#123b38] text-xs font-bold uppercase tracking-wider text-[#64d8c1] py-2.5 border-l border-[#4f657a]">Nilai Utilitas</TableHead>
+                                                <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">
+                                                    <span className="cursor-help underline decoration-[#4f657a] decoration-dotted" title="Si (Sum of Weighted Values): Total nilai tertimbang alternatif. Semakin besar semakin baik.">Nilai Si</span>
+                                                </TableHead>
+                                                <TableHead className="text-center bg-[#123b38] text-xs font-bold uppercase tracking-wider text-[#64d8c1] py-2.5 border-l border-[#4f657a]">
+                                                    <span className="cursor-help underline decoration-[#64d8c1]/40 decoration-dotted" title="Nilai Utilitas Akhir (K): Berada di rentang 0 hingga 1. Semakin mendekati 1 semakin direkomendasikan.">Nilai Utilitas</span>
+                                                </TableHead>
                                                 <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 pr-6 font-sans">Status Kelayakan</TableHead>
                                             </TableRow>
                                         </TableHeader>
@@ -266,6 +270,27 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                 </div>
                                 <div className="mt-1 text-xl font-bold text-white font-mono">Ki &lt; 0.45</div>
                                 <p className="text-xs text-[#8294aa] mt-1.5 leading-relaxed">Risiko tinggi, penundaan pinjaman</p>
+                            </div>
+                        </div>
+
+                        {/* Parameter Explanations */}
+                        <div className="mt-6 p-5 rounded bg-[#111827] border border-[#4f657a] space-y-4">
+                            <h4 className="text-sm font-bold text-white flex items-center gap-2">
+                                <HelpCircle className="h-4 w-4 text-[#d6b45f]" /> Legenda & Cara Membaca Parameter MARCOS
+                            </h4>
+                            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-xs text-[#b2bfca]">
+                                <div className="p-3.5 rounded bg-[#0b1020] border border-[#4f657a]/40">
+                                    <strong className="text-[#64d8c1] block mb-1">Si (Sum of Weighted Values)</strong>
+                                    Total nilai tertimbang alternatif. Semakin besar nilainya, semakin baik kinerja nasabah tersebut secara keseluruhan terhadap kriteria.
+                                </div>
+                                <div className="p-3.5 rounded bg-[#0b1020] border border-[#4f657a]/40">
+                                    <strong className="text-[#88a4ff] block mb-1">Nilai Utilitas K (Hasil Akhir)</strong>
+                                    Kombinasi akhir derajat dan fungsi utilitas (berkisar antara 0 hingga 1). **Nasabah dengan Nilai Utilitas tertinggi berada di ranking teratas dan paling layak diprioritaskan mendapat pinjaman.**
+                                </div>
+                                <div className="p-3.5 rounded bg-[#0b1020] border border-[#4f657a]/40 sm:col-span-2 lg:col-span-1">
+                                    <strong className="text-amber-400 block mb-1">Status Kelayakan</strong>
+                                    Ditentukan berdasarkan nilai utilitas (Ki). **Sangat Layak** (Ki &ge; 0.75), **Layak** (0.60 &le; Ki &lt; 0.75), **Dipertimbangkan** (0.45 &le; Ki &lt; 0.60), **Tidak Prioritas** (Ki &lt; 0.45).
+                                </div>
                             </div>
                         </div>
                     </>
