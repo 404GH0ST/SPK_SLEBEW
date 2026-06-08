@@ -234,7 +234,7 @@ export default function Authenticated({
             {/* Main Content Area */}
             <div className="flex-1 flex flex-col min-w-0 bg-transparent">
                 {header && (
-                    <header className="bg-[#111827] border-b border-[#4f657a]/60 py-4">
+                    <header className="bg-[#111827] border-b border-[#4f657a]/60 h-16 flex items-center">
                         <div className="max-w-7xl w-full mx-auto px-5 md:px-6">
                             {header}
                         </div>
