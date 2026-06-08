@@ -431,7 +431,7 @@ export default function Details({ details, error }: DetailsProps) {
 
                                                         return (
                                                             <TableRow key={alt.id} className="border-[#4f657a]/50 hover:bg-[#152133]/40 transition-colors">
-                                                                <TableCell className="font-semibold text-slate-100 py-2.5">{alt.name}</TableCell>
+                                                                <TableCell className="font-semibold text-slate-100 py-2.5 min-w-[150px] max-w-[220px] whitespace-normal leading-snug">{alt.name}</TableCell>
                                                                 <TableCell className="text-center font-mono text-[#b2bfca] text-sm py-2.5 border-l border-[#4f657a]/30">{details.si_values[alt.id].toFixed(4)}</TableCell>
                                                                 <TableCell className="text-center font-mono text-[#b2bfca] text-sm py-2.5 border-l border-[#4f657a]/30 bg-[#152547]/5">{kiMinus.toFixed(4)}</TableCell>
                                                                 <TableCell className="text-center font-mono text-[#b2bfca] text-sm py-2.5 border-l border-[#4f657a]/20 bg-[#152547]/5">{kiPlus.toFixed(4)}</TableCell>

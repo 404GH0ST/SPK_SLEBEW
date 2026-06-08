@@ -185,10 +185,8 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                     <Table>
                                         <TableHeader className="bg-[#0b1020]/40 hover:bg-[#0b1020]/40">
                                             <TableRow className="border-[#4f657a] hover:bg-transparent">
-                                                <TableHead className="w-20 text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-sans">Rank</TableHead>
-                                                <TableHead className="w-24 text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-sans">Kode</TableHead>
-                                                <TableHead className="text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-sans">Nama Nasabah</TableHead>
-                                                <TableHead className="text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-sans">NIK</TableHead>
+                                                <TableHead className="w-16 text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-sans">Rank</TableHead>
+                                                <TableHead className="text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-sans">Nasabah</TableHead>
                                                 {active_criteria.map(c => (
                                                     <TableHead key={c.id} className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 font-mono">
                                                         <span 
@@ -205,16 +203,17 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                                 <TableHead className="text-center bg-[#123b38] text-xs font-bold uppercase tracking-wider text-[#64d8c1] py-2.5 border-l border-[#4f657a]">
                                                     <span className="cursor-help underline decoration-[#64d8c1]/40 decoration-dotted" title="Nilai Utilitas Akhir (Kᵢ): Berada di rentang 0 hingga 1. Semakin mendekati 1 semakin direkomendasikan.">Nilai Utilitas (Kᵢ)</span>
                                                 </TableHead>
-                                                <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 pr-6 font-sans">Status Kelayakan</TableHead>
+                                                <TableHead className="text-center text-xs font-semibold uppercase tracking-wider text-[#b2bfca] py-2.5 pr-4 font-sans">Status Kelayakan</TableHead>
                                             </TableRow>
                                         </TableHeader>
                                         <TableBody>
                                             {results.map((res) => (
                                                 <TableRow key={res.id} className="border-[#4f657a] hover:bg-[#152133]/20 transition-colors">
                                                     <TableCell className="text-center py-2.5">{getRankMedal(res.rank)}</TableCell>
-                                                    <TableCell className="font-semibold font-mono text-[#b2bfca] py-2.5">{res.alternative.code}</TableCell>
-                                                    <TableCell className="text-slate-100 font-medium py-2.5">{res.alternative.name}</TableCell>
-                                                    <TableCell className="text-[#b2bfca] font-mono text-xs py-2.5">{res.alternative.nik}</TableCell>
+                                                    <TableCell className="py-2.5 min-w-[200px] max-w-[260px]">
+                                                        <div className="font-semibold text-slate-100 whitespace-normal leading-snug">{res.alternative.name}</div>
+                                                        <div className="text-[10px] text-[#8294aa] font-mono mt-0.5 tracking-wide">{res.alternative.code} • NIK: {res.alternative.nik}</div>
+                                                    </TableCell>
                                                     {active_criteria.map(c => {
                                                         const score = res.alternative.scores?.find(s => s.criteria_id === c.id);
                                                         return (
@@ -225,7 +224,7 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                                     })}
                                                     <TableCell className="text-center font-mono text-[#b2bfca] text-sm py-2.5">{res.si.toFixed(4)}</TableCell>
                                                     <TableCell className="text-center font-mono bg-[#123b38] text-[#64d8c1] font-bold text-sm py-2.5 border-l border-[#4f657a]">{res.utility_value.toFixed(4)}</TableCell>
-                                                    <TableCell className="text-center py-2.5 pr-6">{getStatusBadge(res.status)}</TableCell>
+                                                    <TableCell className="text-center py-2.5 pr-4">{getStatusBadge(res.status)}</TableCell>
                                                 </TableRow>
                                             ))}
                                         </TableBody>
