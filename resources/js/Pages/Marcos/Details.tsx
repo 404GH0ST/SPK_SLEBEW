@@ -117,7 +117,7 @@ export default function Details({ details, error }: DetailsProps) {
                             {error.includes("bobot SWARA") && (
                                 <Button
                                     onClick={() => router.get(route('swara.index'))}
-                                    className="bg-rose-900/20 border border-rose-800 text-rose-300 hover:bg-rose-900/40 rounded-md text-xs gap-1.5 transition px-3.5 h-8 font-medium"
+                                    className="bg-[#d6b45f] hover:bg-[#f2d98a] text-[#0b1020] rounded text-xs gap-1.5 transition px-3.5 h-8 font-semibold border border-[#aa7f31]"
                                 >
                                     Atur Bobot SWARA <ArrowRight className="h-3 w-3" />
                                 </Button>
@@ -125,7 +125,7 @@ export default function Details({ details, error }: DetailsProps) {
                             {error.includes("Nilai alternatif") && (
                                 <Button
                                     onClick={() => router.get(route('scores.index'))}
-                                    className="bg-rose-900/20 border border-rose-800 text-rose-300 hover:bg-rose-900/40 rounded-md text-xs gap-1.5 transition px-3.5 h-8 font-medium"
+                                    className="bg-[#d6b45f] hover:bg-[#f2d98a] text-[#0b1020] rounded text-xs gap-1.5 transition px-3.5 h-8 font-semibold border border-[#aa7f31]"
                                 >
                                     Lengkapi Nilai Nasabah <ArrowRight className="h-3 w-3" />
                                 </Button>

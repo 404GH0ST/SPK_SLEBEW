@@ -105,7 +105,7 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                                 href={route('reports.pdf')}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="inline-flex items-center justify-center gap-2 h-10 px-4 rounded-md text-xs font-semibold bg-rose-600 hover:bg-rose-500 text-white transition-all border border-rose-700 duration-150 "
+                                className="inline-flex items-center justify-center gap-2 h-10 px-4 rounded text-xs font-semibold bg-[#123b38] hover:bg-[#184e49] text-[#64d8c1] transition-all border border-[#64d8c1]/35 duration-150 "
                             >
                                 <FileText className="h-4 w-4" /> Cetak PDF
                             </a>

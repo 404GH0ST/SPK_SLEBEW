@@ -255,7 +255,7 @@ export default function Dashboard({ stats, top_rankings }: DashboardProps) {
                                 className="flex items-center justify-between p-3 rounded-md border border-[#4f657a] bg-[#0b1020] hover:bg-[#152133] hover:border-[#d6b45f]/70 transition duration-150 group"
                             >
                                 <span className="text-xs font-semibold text-[#b2bfca] flex items-center gap-2 group-hover:text-white transition">
-                                    <FileText className="h-3.5 w-3.5 text-[#ff8a9a]" /> Cetak Laporan PDF
+                                    <FileText className="h-3.5 w-3.5 text-[#64d8c1]" /> Cetak Laporan PDF
                                 </span>
                                 <ArrowRight className="h-3.5 w-3.5 text-[#8294aa] group-hover:text-[#f2d98a] group-hover:translate-x-0.5 transition" />
                             </a>

@@ -130,7 +130,7 @@ export default function Index({ criteria }: IndexProps) {
                     <p className="text-[#b2bfca] text-sm mt-2.5 leading-relaxed">
                         Kriteria di bawah ini merupakan acuan penilaian nasabah.
                         Tipe <strong className="text-[#64d8c1] font-semibold">Benefit</strong> berarti semakin besar nilainya semakin baik (misalnya Penghasilan). 
-                        Tipe <strong className="text-rose-400 font-semibold">Cost</strong> berarti semakin kecil nilainya semakin baik (misalnya Jumlah Pinjaman).
+                        Tipe <strong className="text-[#88a4ff] font-semibold">Cost</strong> berarti semakin kecil nilainya semakin baik (misalnya Jumlah Pinjaman).
                     </p>
                 </div>
 
@@ -166,7 +166,7 @@ export default function Index({ criteria }: IndexProps) {
                                                     <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold border ${
                                                         item.type === 'benefit' 
                                                             ? 'bg-[#123b38] text-[#64d8c1] border-[#64d8c1]/35' 
-                                                            : 'bg-rose-950/20 text-rose-400 border-rose-900/50'
+                                                            : 'bg-[#152133] text-[#88a4ff] border-[#88a4ff]/30'
                                                     }`}>
                                                         {item.type.toUpperCase()}
                                                     </span>
