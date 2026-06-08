@@ -124,9 +124,9 @@ export default function Results({ results, is_calculated, active_criteria = [] }
 
             <div className="space-y-6 pb-6">
                 {!is_calculated ? (
-                    <div className="overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a] p-12 text-center max-w-lg mx-auto mt-12 shadow-lg">
+                    <div className="overflow-hidden rounded bg-[#111827] border border-[#4f657a] p-12 text-center max-w-lg mx-auto mt-12 shadow-lg">
                         <div className="flex flex-col items-center pb-2">
-                            <div className="h-14 w-14 rounded-md bg-[#152133] flex items-center justify-center mb-4 border border-[#6f8295]">
+                            <div className="h-14 w-14 rounded bg-[#152133] flex items-center justify-center mb-4 border border-[#6f8295]">
                                 <Trophy className="h-7 w-7 text-[#64d8c1]" />
                             </div>
                             <h3 className="text-xl font-bold text-white tracking-tight">Belum Ada Hasil Perhitungan</h3>
@@ -153,13 +153,13 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                 ) : (
                     <>
                         {/* Recommendation Banner */}
-                        <div className="overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a] p-5 md:p-6 ">
+                        <div className="overflow-hidden rounded bg-[#111827] border border-[#4f657a] p-5 md:p-6 ">
                             <div className="flex items-start gap-4">
-                                <div className="h-12 w-12 rounded-md bg-[#152133] flex items-center justify-center shrink-0 border border-[#6f8295]">
+                                <div className="h-12 w-12 rounded bg-[#152133] flex items-center justify-center shrink-0 border border-[#6f8295]">
                                     <Award className="h-6 w-6 text-[#64d8c1]" />
                                 </div>
                                 <div className="space-y-2">
-                                    <span className="inline-flex items-center text-[10px] font-semibold uppercase tracking-wider text-[#64d8c1] px-2.5 py-0.5 rounded-md bg-[#123b38] border border-[#64d8c1]/35">Rekomendasi Utama</span>
+                                    <span className="inline-flex items-center text-[10px] font-semibold uppercase tracking-wider text-[#64d8c1] px-2.5 py-0.5 rounded bg-[#123b38] border border-[#64d8c1]/35">Rekomendasi Utama</span>
                                     <h3 className="text-lg font-bold text-white tracking-tight">
                                         Nasabah Terbaik: {results[0].alternative.name} ({results[0].alternative.code})
                                     </h3>
@@ -171,7 +171,7 @@ export default function Results({ results, is_calculated, active_criteria = [] }
                         </div>
 
                         {/* Results Table Card */}
-                        <div className="overflow-hidden rounded-lg bg-[#111827] border border-[#4f657a] ">
+                        <div className="overflow-hidden rounded bg-[#111827] border border-[#4f657a] ">
                             <div className="border-b border-[#4f657a] p-5 md:p-6">
                                 <h3 className="text-lg font-bold text-white flex items-center gap-2 font-sans tracking-tight">
                                     <Trophy className="h-5 w-5 text-amber-500" /> Peringkat Kelayakan Penerima Pinjaman

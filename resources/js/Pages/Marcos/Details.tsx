@@ -137,9 +137,9 @@ export default function Details({ details, error }: DetailsProps) {
                 {details && (
                     <>
                         {/* Summary Header */}
-                        <div className="rounded-lg bg-[#111827] border border-[#4f657a] p-5 md:p-6 ">
+                        <div className="rounded bg-[#111827] border border-[#4f657a] p-5 md:p-6 ">
                             <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                                <span className="p-1 rounded-md bg-[#123b38] text-[#64d8c1] border border-[#64d8c1]/30">
+                                <span className="p-1 rounded bg-[#123b38] text-[#64d8c1] border border-[#64d8c1]/30">
                                     <Sparkles className="h-4 w-4" />
                                 </span>
                                 Penjelasan Perhitungan
@@ -170,7 +170,7 @@ export default function Details({ details, error }: DetailsProps) {
 
                             {/* Tab 1: Decision Matrix */}
                             <TabsContent value="matrix" className="mt-6 space-y-4">
-                                <div className="rounded-lg bg-[#111827] border border-[#4f657a] ">
+                                <div className="rounded bg-[#111827] border border-[#4f657a] ">
                                     <div className="border-b border-[#4f657a] p-5 md:p-6">
                                         <h3 className="text-lg font-bold text-white font-sans">A. Matriks Keputusan Awal</h3>
                                         <p className="text-xs text-[#b2bfca] mt-1">
@@ -234,7 +234,7 @@ export default function Details({ details, error }: DetailsProps) {
 
                             {/* Tab 2: Normalized Matrix */}
                             <TabsContent value="normalized" className="mt-6 space-y-4">
-                                <div className="rounded-lg bg-[#111827] border border-[#4f657a] ">
+                                <div className="rounded bg-[#111827] border border-[#4f657a] ">
                                     <div className="border-b border-[#4f657a] p-5 md:p-6">
                                         <h3 className="text-lg font-bold text-white font-sans">B. Matriks Normalisasi (n_ij)</h3>
                                         <p className="text-xs text-[#b2bfca] mt-1">
@@ -295,7 +295,7 @@ export default function Details({ details, error }: DetailsProps) {
 
                             {/* Tab 3: Weighted Normalized Matrix */}
                             <TabsContent value="weighted" className="mt-6 space-y-4">
-                                <div className="rounded-lg bg-[#111827] border border-[#4f657a] ">
+                                <div className="rounded bg-[#111827] border border-[#4f657a] ">
                                     <div className="border-b border-[#4f657a] p-5 md:p-6">
                                         <h3 className="text-lg font-bold text-white font-sans">C. Matriks Normalisasi Terbobot (v_ij)</h3>
                                         <p className="text-xs text-[#b2bfca] mt-1">
@@ -377,7 +377,7 @@ export default function Details({ details, error }: DetailsProps) {
                                     </div>
                                 </div>
 
-                                <div className="rounded-lg bg-[#111827] border border-[#4f657a] ">
+                                <div className="rounded bg-[#111827] border border-[#4f657a] ">
                                     <div className="border-b border-[#4f657a] p-5 md:p-6">
                                         <h3 className="text-lg font-bold text-white font-sans">D. Si, Derajat Utilitas (Ki), Fungsi Utilitas f(Ki), dan Ranking Akhir</h3>
                                         <p className="text-xs text-[#b2bfca] mt-1">
