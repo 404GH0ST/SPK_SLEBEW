@@ -33,7 +33,7 @@ export default function Login({
             <Head title="Log in" />
 
             {status && (
-                <div className="mb-4 rounded-md border border-[#64d8c1]/40 bg-[#123b38] px-3 py-2 text-sm font-medium text-[#64d8c1]">
+                <div className="mb-4 rounded-md border border-coop-teal/40 bg-coop-teal/10 px-3 py-2 text-sm font-medium text-coop-teal">
                     {status}
                 </div>
             )}
@@ -84,7 +84,7 @@ export default function Login({
                                 )
                             }
                         />
-                        <span className="ms-2 text-sm text-[#b2bfca]">
+                        <span className="ms-2 text-sm text-coop-muted-light">
                             Remember me
                         </span>
                     </label>
@@ -94,7 +94,7 @@ export default function Login({
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="rounded-md text-sm font-medium text-[#b2bfca] underline decoration-[#4f657a] underline-offset-4 hover:text-[#f2d98a] focus:outline-none focus:ring-2 focus:ring-[#f2d98a] focus:ring-offset-2 focus:ring-offset-[#111827]"
+                            className="rounded-md text-sm font-medium text-coop-muted-light underline decoration-coop-border underline-offset-4 hover:text-coop-gold focus:outline-none focus:ring-2 focus:ring-coop-gold focus:ring-offset-2 focus:ring-offset-coop-card"
                         >
                             Forgot your password?
                         </Link>

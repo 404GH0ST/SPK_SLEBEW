@@ -32,11 +32,11 @@ export default function UpdateProfileInformation({
     return (
         <section className={className}>
             <header>
-                <h2 className="text-lg font-medium text-white text-white">
+                <h2 className="text-lg font-medium text-coop-text text-coop-text">
                     Profile Information
                 </h2>
 
-                <p className="mt-1 text-sm text-[#b2bfca] text-[#b2bfca]">
+                <p className="mt-1 text-sm text-coop-muted-light text-coop-muted-light">
                     Update your account's profile information and email address.
                 </p>
             </header>
@@ -76,13 +76,13 @@ export default function UpdateProfileInformation({
 
                 {mustVerifyEmail && user.email_verified_at === null && (
                     <div>
-                        <p className="mt-2 text-sm text-[#b2bfca] text-slate-100">
+                        <p className="mt-2 text-sm text-coop-muted-light text-coop-text">
                             Your email address is unverified.
                             <Link
                                 href={route('verification.send')}
                                 method="post"
                                 as="button"
-                                className="rounded-md text-sm text-[#b2bfca] underline hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6b45f] focus:ring-offset-2 text-[#b2bfca] hover:text-white focus:ring-offset-[#0b1020]"
+                                className="rounded-md text-sm text-coop-muted-light underline hover:text-coop-text focus:outline-none focus:ring-2 focus:ring-coop-gold focus:ring-offset-2 text-coop-muted-light hover:text-coop-text focus:ring-offset-coop-bg"
                             >
                                 Click here to re-send the verification email.
                             </Link>
@@ -107,7 +107,7 @@ export default function UpdateProfileInformation({
                         leave="transition ease-in-out"
                         leaveTo="opacity-0"
                     >
-                        <p className="text-sm text-[#b2bfca] text-[#b2bfca]">
+                        <p className="text-sm text-coop-muted-light text-coop-muted-light">
                             Saved.
                         </p>
                     </Transition>

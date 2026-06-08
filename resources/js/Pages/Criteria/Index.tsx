@@ -102,13 +102,13 @@ export default function Index({ criteria }: IndexProps) {
         <AuthenticatedLayout
             header={
                 <div className="flex items-center justify-between">
-                    <h2 className="text-2xl font-bold tracking-tight text-white font-sans">
+                    <h2 className="text-2xl font-bold tracking-tight text-coop-text font-sans">
                         Data Kriteria Penilaian
                     </h2>
                     {isAdmin && (
                         <Button 
                             onClick={handleOpenAdd}
-                            className="bg-[#d6b45f] hover:bg-[#f2d98a] text-[#0b1020] gap-2 rounded-md transition duration-300 font-semibold border border-[#aa7f31] "
+                            className="bg-coop-gold hover:bg-coop-gold-hover text-coop-bg gap-2 rounded-md transition duration-300 font-semibold border border-[#aa7f31] "
                         >
                             <Plus className="h-4 w-4" /> Tambah Kriteria
                         </Button>
@@ -120,66 +120,66 @@ export default function Index({ criteria }: IndexProps) {
 
             <div className="space-y-6 pb-6">
                 {/* Intro Card */}
-                <div className="rounded bg-[#111827] border border-[#4f657a] p-5 ">
-                    <h3 className="text-base font-bold text-white flex items-center gap-2">
-                        <span className="p-1 rounded bg-[#123b38] text-[#64d8c1] border border-[#64d8c1]/30">
+                <div className="rounded bg-coop-card border border-coop-border p-5 ">
+                    <h3 className="text-base font-bold text-coop-text flex items-center gap-2">
+                        <span className="p-1 rounded bg-coop-teal/10 text-coop-teal border border-coop-teal/30">
                             <ShieldAlert className="h-4 w-4" />
                         </span>
                         Panduan Penggunaan Kriteria
                     </h3>
-                    <p className="text-[#b2bfca] text-sm mt-2.5 leading-relaxed">
+                    <p className="text-coop-muted-light text-sm mt-2.5 leading-relaxed">
                         Kriteria di bawah ini merupakan acuan penilaian nasabah.
-                        Tipe <strong className="text-[#64d8c1] font-semibold">Benefit</strong> berarti semakin besar nilainya semakin baik (misalnya Penghasilan). 
-                        Tipe <strong className="text-[#88a4ff] font-semibold">Cost</strong> berarti semakin kecil nilainya semakin baik (misalnya Jumlah Pinjaman).
+                        Tipe <strong className="text-coop-teal font-semibold">Benefit</strong> berarti semakin besar nilainya semakin baik (misalnya Penghasilan). 
+                        Tipe <strong className="text-coop-blue font-semibold">Cost</strong> berarti semakin kecil nilainya semakin baik (misalnya Jumlah Pinjaman).
                     </p>
                 </div>
 
                 {/* Criteria Table Card */}
-                <div className="rounded bg-[#111827] border border-[#4f657a] ">
+                <div className="rounded bg-coop-card border border-coop-border ">
                     <div className="p-5">
-                        <div className="overflow-x-auto rounded border border-[#4f657a] bg-[#0b1020]">
+                        <div className="overflow-x-auto rounded border border-coop-border bg-coop-bg">
                             <Table>
-                                <TableHeader className="bg-[#111827]">
-                                    <TableRow className="border-[#4f657a] hover:bg-transparent">
-                                        <TableHead className="w-24 text-xs font-bold uppercase tracking-wider text-[#b2bfca] py-3">Kode</TableHead>
-                                        <TableHead className="text-xs font-bold uppercase tracking-wider text-[#b2bfca] py-3">Nama Kriteria</TableHead>
-                                        <TableHead className="text-xs font-bold uppercase tracking-wider text-[#b2bfca] py-3">Tipe</TableHead>
-                                        <TableHead className="text-xs font-bold uppercase tracking-wider text-[#b2bfca] py-3">Satuan</TableHead>
-                                        <TableHead className="text-xs font-bold uppercase tracking-wider text-[#b2bfca] py-3">Keterangan</TableHead>
-                                        <TableHead className="text-center text-xs font-bold uppercase tracking-wider text-[#b2bfca] py-3">Status</TableHead>
-                                        {isAdmin && <TableHead className="text-right text-xs font-bold uppercase tracking-wider text-[#b2bfca] py-3 pr-6">Aksi</TableHead>}
+                                <TableHeader className="bg-coop-card">
+                                    <TableRow className="border-coop-border hover:bg-transparent">
+                                        <TableHead className="w-24 text-xs font-bold uppercase tracking-wider text-coop-muted-light py-3">Kode</TableHead>
+                                        <TableHead className="text-xs font-bold uppercase tracking-wider text-coop-muted-light py-3">Nama Kriteria</TableHead>
+                                        <TableHead className="text-xs font-bold uppercase tracking-wider text-coop-muted-light py-3">Tipe</TableHead>
+                                        <TableHead className="text-xs font-bold uppercase tracking-wider text-coop-muted-light py-3">Satuan</TableHead>
+                                        <TableHead className="text-xs font-bold uppercase tracking-wider text-coop-muted-light py-3">Keterangan</TableHead>
+                                        <TableHead className="text-center text-xs font-bold uppercase tracking-wider text-coop-muted-light py-3">Status</TableHead>
+                                        {isAdmin && <TableHead className="text-right text-xs font-bold uppercase tracking-wider text-coop-muted-light py-3 pr-6">Aksi</TableHead>}
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
                                     {criteria.length === 0 ? (
-                                        <TableRow className="border-[#4f657a]">
-                                            <TableCell colSpan={isAdmin ? 7 : 6} className="text-center py-12 text-[#8294aa] text-sm">
+                                        <TableRow className="border-coop-border">
+                                            <TableCell colSpan={isAdmin ? 7 : 6} className="text-center py-12 text-coop-muted-dark text-sm">
                                                 Belum ada data kriteria.
                                             </TableCell>
                                         </TableRow>
                                     ) : (
                                         criteria.map((item) => (
-                                            <TableRow key={item.id} className="border-[#4f657a] hover:bg-[#152133]/40 transition-colors">
-                                                <TableCell className="font-bold font-mono text-[#64d8c1] py-2.5">{item.code}</TableCell>
-                                                <TableCell className="text-slate-100 font-semibold text-sm py-2.5">{item.name}</TableCell>
+                                            <TableRow key={item.id} className="border-coop-border hover:bg-coop-highlight/40 transition-colors">
+                                                <TableCell className="font-bold font-mono text-coop-teal py-2.5">{item.code}</TableCell>
+                                                <TableCell className="text-coop-text font-semibold text-sm py-2.5">{item.name}</TableCell>
                                                 <TableCell className="py-2.5">
                                                     <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold border ${
                                                         item.type === 'benefit' 
-                                                            ? 'bg-[#123b38] text-[#64d8c1] border-[#64d8c1]/35' 
-                                                            : 'bg-[#152133] text-[#88a4ff] border-[#88a4ff]/30'
+                                                            ? 'bg-coop-teal/10 text-coop-teal border-coop-teal/35' 
+                                                            : 'bg-coop-highlight text-coop-blue border-coop-blue/30'
                                                     }`}>
                                                         {item.type.toUpperCase()}
                                                     </span>
                                                 </TableCell>
-                                                <TableCell className="text-[#b2bfca] text-sm py-2.5">{item.unit || '-'}</TableCell>
-                                                <TableCell className="text-[#b2bfca] text-xs max-w-xs truncate py-2.5" title={item.description || ''}>
+                                                <TableCell className="text-coop-muted-light text-sm py-2.5">{item.unit || '-'}</TableCell>
+                                                <TableCell className="text-coop-muted-light text-xs max-w-xs truncate py-2.5" title={item.description || ''}>
                                                     {item.description || '-'}
                                                 </TableCell>
                                                 <TableCell className="text-center py-2.5">
                                                     {item.is_active ? (
-                                                        <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold border bg-[#123b38] text-[#64d8c1] border-[#64d8c1]/35">Aktif</span>
+                                                        <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold border bg-coop-teal/10 text-coop-teal border-coop-teal/35">Aktif</span>
                                                     ) : (
-                                                        <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold border bg-[#0b1020]/40 text-[#b2bfca] border-[#4f657a]">Nonaktif</span>
+                                                        <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold border bg-coop-bg/40 text-coop-muted-light border-coop-border">Nonaktif</span>
                                                     )}
                                                 </TableCell>
                                                 {isAdmin && (
@@ -188,17 +188,19 @@ export default function Index({ criteria }: IndexProps) {
                                                             variant="outline"
                                                             size="icon"
                                                             onClick={() => handleOpenEdit(item)}
-                                                            className="h-8 w-8 border-[#4f657a] bg-[#111827] hover:bg-[#152133] text-[#b2bfca] hover:text-white rounded-md transition"
+                                                            className="h-10 w-10 border-coop-border bg-coop-card hover:bg-coop-highlight text-coop-muted-light hover:text-coop-text rounded-md transition inline-flex items-center justify-center"
+                                                            aria-label={`Ubah kriteria ${item.name}`}
                                                         >
-                                                            <Pencil className="h-3.5 w-3.5" />
+                                                            <Pencil className="h-4 w-4" />
                                                         </Button>
                                                         <Button
                                                             variant="outline"
                                                             size="icon"
                                                             onClick={() => handleOpenDelete(item.id)}
-                                                            className="h-8 w-8 border-[#4f657a] bg-[#111827] hover:bg-rose-950/30 hover:border-rose-900/50 text-rose-400 rounded-md transition"
+                                                            className="h-10 w-10 border-coop-border bg-coop-card hover:bg-rose-950/30 hover:border-rose-900/50 text-rose-400 rounded-md transition inline-flex items-center justify-center"
+                                                            aria-label={`Hapus kriteria ${item.name}`}
                                                         >
-                                                            <Trash2 className="h-3.5 w-3.5" />
+                                                            <Trash2 className="h-4 w-4" />
                                                         </Button>
                                                     </TableCell>
                                                 )}
@@ -214,37 +216,37 @@ export default function Index({ criteria }: IndexProps) {
 
             {/* Add / Edit Dialog */}
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
-                <DialogContent className="bg-[#111827] border border-[#4f657a] text-slate-100 max-w-md rounded  p-6">
+                <DialogContent className="bg-coop-card border border-coop-border text-coop-text max-w-md rounded  p-6">
                     <DialogHeader>
-                        <DialogTitle className="text-lg font-bold text-white">
+                        <DialogTitle className="text-lg font-bold text-coop-text">
                             {editingCriterion ? 'Ubah Kriteria' : 'Tambah Kriteria Baru'}
                         </DialogTitle>
-                        <DialogDescription className="text-[#b2bfca] text-xs">
+                        <DialogDescription className="text-coop-muted-light text-xs">
                             Silakan isi form di bawah ini untuk menyimpan data kriteria.
                         </DialogDescription>
                     </DialogHeader>
                     <form onSubmit={handleSubmit} className="space-y-4 pt-3">
                         <div className="space-y-1.5">
-                            <Label htmlFor="code" className="text-[#b2bfca] text-[10px] font-bold uppercase tracking-wider">Kode Kriteria</Label>
+                            <Label htmlFor="code" className="text-coop-muted-light text-[10px] font-bold uppercase tracking-wider">Kode Kriteria</Label>
                             <Input
                                 id="code"
                                 value={data.code}
                                 onChange={e => setData('code', e.target.value)}
                                 placeholder="Contoh: K1"
-                                className="bg-[#0b1020] border-[#4f657a] text-slate-100 placeholder-[#8294aa] focus-visible:ring-[#d6b45f]/15 focus-visible:ring-2 focus-visible:border-[#d6b45f] rounded-md transition duration-200"
+                                className="bg-coop-bg border-coop-border text-coop-text placeholder-[#8294aa] focus-visible:ring-coop-gold/15 focus-visible:ring-2 focus-visible:border-coop-gold rounded-md transition duration-200"
                                 required
                             />
                             {errors.code && <p className="text-rose-500 text-[10px] mt-1">{errors.code}</p>}
                         </div>
 
                         <div className="space-y-1.5">
-                            <Label htmlFor="name" className="text-[#b2bfca] text-[10px] font-bold uppercase tracking-wider">Nama Kriteria</Label>
+                            <Label htmlFor="name" className="text-coop-muted-light text-[10px] font-bold uppercase tracking-wider">Nama Kriteria</Label>
                             <Input
                                 id="name"
                                 value={data.name}
                                 onChange={e => setData('name', e.target.value)}
                                 placeholder="Contoh: Jumlah Pinjaman"
-                                className="bg-[#0b1020] border-[#4f657a] text-slate-100 placeholder-[#8294aa] focus-visible:ring-[#d6b45f]/15 focus-visible:ring-2 focus-visible:border-[#d6b45f] rounded-md transition duration-200"
+                                className="bg-coop-bg border-coop-border text-coop-text placeholder-[#8294aa] focus-visible:ring-coop-gold/15 focus-visible:ring-2 focus-visible:border-coop-gold rounded-md transition duration-200"
                                 required
                             />
                             {errors.name && <p className="text-rose-500 text-[10px] mt-1">{errors.name}</p>}
@@ -252,40 +254,40 @@ export default function Index({ criteria }: IndexProps) {
 
                         <div className="grid grid-cols-2 gap-4">
                             <div className="space-y-1.5">
-                                <Label htmlFor="type" className="text-[#b2bfca] text-[10px] font-bold uppercase tracking-wider">Tipe</Label>
+                                <Label htmlFor="type" className="text-coop-muted-light text-[10px] font-bold uppercase tracking-wider">Tipe</Label>
                                 <select
                                     id="type"
                                     value={data.type}
                                     onChange={e => setData('type', e.target.value as 'benefit' | 'cost')}
-                                    className="w-full h-10 px-3 rounded-md border border-[#4f657a] bg-[#0b1020] text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-[#d6b45f]/10 focus:border-[#d6b45f] transition duration-200"
+                                    className="w-full h-10 px-3 rounded-md border border-coop-border bg-coop-bg text-coop-text text-sm focus:outline-none focus:ring-2 focus:ring-coop-gold/10 focus:border-coop-gold transition duration-200"
                                 >
-                                    <option value="benefit" className="bg-[#0b1020]">Benefit</option>
-                                    <option value="cost" className="bg-[#0b1020]">Cost</option>
+                                    <option value="benefit" className="bg-coop-bg">Benefit</option>
+                                    <option value="cost" className="bg-coop-bg">Cost</option>
                                 </select>
                                 {errors.type && <p className="text-rose-500 text-[10px] mt-1">{errors.type}</p>}
                             </div>
 
                             <div className="space-y-1.5">
-                                <Label htmlFor="unit" className="text-[#b2bfca] text-[10px] font-bold uppercase tracking-wider">Satuan</Label>
+                                <Label htmlFor="unit" className="text-coop-muted-light text-[10px] font-bold uppercase tracking-wider">Satuan</Label>
                                 <Input
                                     id="unit"
                                     value={data.unit}
                                     onChange={e => setData('unit', e.target.value)}
                                     placeholder="Contoh: Rupiah, Bulan"
-                                    className="bg-[#0b1020] border-[#4f657a] text-slate-100 placeholder-[#8294aa] focus-visible:ring-[#d6b45f]/15 focus-visible:ring-2 focus-visible:border-[#d6b45f] rounded-md transition duration-200"
+                                    className="bg-coop-bg border-coop-border text-coop-text placeholder-[#8294aa] focus-visible:ring-coop-gold/15 focus-visible:ring-2 focus-visible:border-coop-gold rounded-md transition duration-200"
                                 />
                                 {errors.unit && <p className="text-rose-500 text-[10px] mt-1">{errors.unit}</p>}
                             </div>
                         </div>
 
                         <div className="space-y-1.5">
-                            <Label htmlFor="description" className="text-[#b2bfca] text-[10px] font-bold uppercase tracking-wider">Deskripsi</Label>
+                            <Label htmlFor="description" className="text-coop-muted-light text-[10px] font-bold uppercase tracking-wider">Deskripsi</Label>
                             <textarea
                                 id="description"
                                 value={data.description}
                                 onChange={e => setData('description', e.target.value)}
                                 placeholder="Penjelasan mengenai kriteria..."
-                                className="w-full min-h-16 p-3 rounded-md border border-[#4f657a] bg-[#0b1020] text-slate-100 text-sm placeholder-[#8294aa] focus:outline-none focus:ring-2 focus:ring-[#d6b45f]/10 focus:border-[#d6b45f] transition duration-200"
+                                className="w-full min-h-16 p-3 rounded-md border border-coop-border bg-coop-bg text-coop-text text-sm placeholder-[#8294aa] focus:outline-none focus:ring-2 focus:ring-coop-gold/10 focus:border-coop-gold transition duration-200"
                             />
                             {errors.description && <p className="text-rose-500 text-[10px] mt-1">{errors.description}</p>}
                         </div>
@@ -296,9 +298,9 @@ export default function Index({ criteria }: IndexProps) {
                                 id="is_active"
                                 checked={data.is_active}
                                 onChange={e => setData('is_active', e.target.checked)}
-                                className="h-4 w-4 rounded border-[#4f657a] bg-[#0b1020] text-[#d6b45f] focus:ring-[#d6b45f] focus:ring-offset-[#0b1020]"
+                                className="h-4 w-4 rounded border-coop-border bg-coop-bg text-coop-gold focus:ring-coop-gold focus:ring-offset-coop-bg"
                             />
-                            <Label htmlFor="is_active" className="text-[#b2bfca] text-xs font-semibold select-none cursor-pointer">
+                            <Label htmlFor="is_active" className="text-coop-muted-light text-xs font-semibold select-none cursor-pointer">
                                 Aktifkan kriteria ini untuk perhitungan SPK
                             </Label>
                             {errors.is_active && <p className="text-rose-500 text-[10px] mt-1">{errors.is_active}</p>}
@@ -309,14 +311,14 @@ export default function Index({ criteria }: IndexProps) {
                                 type="button"
                                 variant="outline"
                                 onClick={() => setIsOpen(false)}
-                                className="border-[#4f657a] bg-[#111827] hover:bg-[#152133] text-[#b2bfca] rounded-md"
+                                className="border-coop-border bg-coop-card hover:bg-coop-highlight text-coop-muted-light rounded-md"
                             >
                                 Batal
                             </Button>
                             <Button
                                 type="submit"
                                 disabled={processing}
-                                className="bg-[#d6b45f] hover:bg-[#f2d98a] text-[#0b1020] rounded-md font-semibold transition  border border-[#aa7f31]"
+                                className="bg-coop-gold hover:bg-coop-gold-hover text-coop-bg rounded-md font-semibold transition  border border-[#aa7f31]"
                             >
                                 Simpan
                             </Button>
@@ -327,12 +329,12 @@ export default function Index({ criteria }: IndexProps) {
 
             {/* Confirm Delete Dialog */}
             <Dialog open={isConfirmDeleteOpen} onOpenChange={setIsConfirmDeleteOpen}>
-                <DialogContent className="bg-[#111827] border border-[#4f657a] text-slate-100 max-w-sm rounded  p-6">
+                <DialogContent className="bg-coop-card border border-coop-border text-coop-text max-w-sm rounded  p-6">
                     <DialogHeader>
-                        <DialogTitle className="text-white flex items-center gap-2 text-base font-bold">
+                        <DialogTitle className="text-coop-text flex items-center gap-2 text-base font-bold">
                             <ShieldAlert className="h-4 w-4 text-rose-500" /> Hapus Kriteria?
                         </DialogTitle>
-                        <DialogDescription className="text-[#b2bfca] text-xs pt-1 leading-relaxed">
+                        <DialogDescription className="text-coop-muted-light text-xs pt-1 leading-relaxed">
                             Tindakan ini tidak dapat dibatalkan. Menghapus kriteria akan menghapus semua data bobot SWARA dan nilai penilaian nasabah terkait!
                         </DialogDescription>
                     </DialogHeader>
@@ -341,7 +343,7 @@ export default function Index({ criteria }: IndexProps) {
                             type="button"
                             variant="outline"
                             onClick={() => setIsConfirmDeleteOpen(false)}
-                            className="border-[#4f657a] bg-[#111827] hover:bg-[#152133] text-[#b2bfca] rounded-md"
+                            className="border-coop-border bg-coop-card hover:bg-coop-highlight text-coop-muted-light rounded-md"
                         >
                             Batal
                         </Button>

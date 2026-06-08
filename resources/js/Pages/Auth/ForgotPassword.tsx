@@ -20,7 +20,7 @@ export default function ForgotPassword({ status }: { status?: string }) {
         <GuestLayout>
             <Head title="Forgot Password" />
 
-            <div className="mb-4 text-sm text-[#b2bfca] text-[#b2bfca]">
+            <div className="mb-4 text-sm text-coop-muted-light text-coop-muted-light">
                 Forgot your password? No problem. Just let us know your email
                 address and we will email you a password reset link that will
                 allow you to choose a new one.

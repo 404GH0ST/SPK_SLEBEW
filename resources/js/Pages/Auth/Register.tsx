@@ -111,7 +111,7 @@ export default function Register() {
                         id="role"
                         name="role"
                         value={data.role}
-                        className="mt-1 block w-full rounded border-[#4f657a] bg-[#0b1020] text-slate-100 placeholder-[#8294aa] focus:border-[#d6b45f] focus:ring-[#d6b45f] focus:ring-opacity-50 text-sm py-2"
+                        className="mt-1 block w-full rounded border-coop-border bg-coop-bg text-coop-text placeholder-[#8294aa] focus:border-coop-gold focus:ring-coop-gold focus:ring-opacity-50 text-sm py-2"
                         onChange={(e) => setData('role', e.target.value)}
                         required
                     >
@@ -126,7 +126,7 @@ export default function Register() {
                 <div className="mt-4 flex items-center justify-end">
                     <Link
                         href={route('login')}
-                        className="rounded text-sm text-[#b2bfca] underline hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6b45f] focus:ring-offset-2 text-[#b2bfca] hover:text-white focus:ring-offset-[#0b1020]"
+                        className="rounded text-sm text-coop-muted-light underline hover:text-coop-text focus:outline-none focus:ring-2 focus:ring-coop-gold focus:ring-offset-2 text-coop-muted-light hover:text-coop-text focus:ring-offset-coop-bg"
                     >
                         Already registered?
                     </Link>

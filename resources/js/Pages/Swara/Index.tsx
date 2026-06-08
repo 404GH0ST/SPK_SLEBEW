@@ -121,7 +121,7 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
     return (
         <AuthenticatedLayout
             header={
-                <h2 className="text-2xl font-bold tracking-tight text-white font-sans">
+                <h2 className="text-2xl font-bold tracking-tight text-coop-text font-sans">
                     Pembobotan Kriteria SWARA
                 </h2>
             }
@@ -131,24 +131,24 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
 
             <div className="space-y-6 pb-6">
                 {/* Method Explanation */}
-                <div className="rounded bg-[#111827] border border-[#4f657a] p-5 ">
+                <div className="rounded bg-coop-card border border-coop-border p-5 ">
                     <div className="space-y-3">
-                        <h3 className="text-base font-bold text-white flex items-center gap-2">
-                            <span className="p-1 rounded bg-[#123b38] text-[#64d8c1] border border-[#64d8c1]/30">
+                        <h3 className="text-base font-bold text-coop-text flex items-center gap-2">
+                            <span className="p-1 rounded bg-coop-teal/10 text-coop-teal border border-coop-teal/30">
                                 <Info className="h-4 w-4" />
                             </span>
                             Mengenal Metode SWARA
                         </h3>
-                        <div className="text-[#b2bfca] text-sm space-y-2.5 leading-relaxed">
+                        <div className="text-coop-muted-light text-sm space-y-2.5 leading-relaxed">
                             <p>
                                 <strong>SWARA (Step-wise Weight Assessment Ratio Analysis)</strong> adalah metode penentuan bobot kriteria berdasarkan tingkat kepentingan yang dinilai langsung oleh pakar.
                             </p>
-                            <p className="font-semibold text-white text-xs uppercase tracking-wider">Langkah Pengisian:</p>
-                            <ol className="list-decimal pl-5 space-y-1.5 text-xs text-[#b2bfca]">
+                            <p className="font-semibold text-coop-text text-xs uppercase tracking-wider">Langkah Pengisian:</p>
+                            <ol className="list-decimal pl-5 space-y-1.5 text-xs text-coop-muted-light">
                                 <li>Urutkan kriteria dari yang paling penting (Peringkat 1) hingga yang kurang penting (Peringkat N).</li>
-                                <li>Isi nilai komparatif <strong className="text-[#64d8c1] font-semibold">$S_j$</strong> mulai dari kriteria peringkat ke-2. Nilai ini menyatakan seberapa penting kriteria tersebut dibandingkan kriteria di atasnya (misal: 0.10 berarti 10% lebih kurang penting).</li>
-                                <li>Kriteria pertama (terpenting) memiliki nilai <strong className="text-[#64d8c1] font-semibold">$S_j = 0$</strong> secara otomatis.</li>
-                                <li>Sistem menghitung Koefisien <strong className="text-[#64d8c1] font-semibold">$K_j = S_j + 1$</strong>, Nilai Rekalkulasi <strong className="text-[#64d8c1] font-semibold">$Q_j$</strong>, dan Bobot Akhir <strong className="text-[#64d8c1] font-semibold">$W_j$</strong>.</li>
+                                <li>Isi nilai komparatif <strong className="text-coop-teal font-semibold">$S_j$</strong> mulai dari kriteria peringkat ke-2. Nilai ini menyatakan seberapa penting kriteria tersebut dibandingkan kriteria di atasnya (misal: 0.10 berarti 10% lebih kurang penting).</li>
+                                <li>Kriteria pertama (terpenting) memiliki nilai <strong className="text-coop-teal font-semibold">$S_j = 0$</strong> secara otomatis.</li>
+                                <li>Sistem menghitung Koefisien <strong className="text-coop-teal font-semibold">$K_j = S_j + 1$</strong>, Nilai Rekalkulasi <strong className="text-coop-teal font-semibold">$Q_j$</strong>, dan Bobot Akhir <strong className="text-coop-teal font-semibold">$W_j$</strong>.</li>
                             </ol>
                         </div>
                     </div>
@@ -156,18 +156,18 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
 
                 <div className="grid gap-6 lg:grid-cols-2">
                     {/* Current Weights View */}
-                    <div className="rounded bg-[#111827] border border-[#4f657a]  flex flex-col">
-                        <div className="border-b border-[#4f657a] p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div className="rounded bg-coop-card border border-coop-border  flex flex-col">
+                        <div className="border-b border-coop-border p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                             <div>
-                                <h3 className="text-base font-bold text-white">Bobot Hasil Perhitungan Saat Ini</h3>
-                                <p className="text-xs text-[#b2bfca] mt-0.5">
+                                <h3 className="text-base font-bold text-coop-text">Bobot Hasil Perhitungan Saat Ini</h3>
+                                <p className="text-xs text-coop-muted-light mt-0.5">
                                     Bobot akhir kriteria ($W_j$) di bawah ini yang akan otomatis digunakan oleh metode MARCOS.
                                 </p>
                             </div>
                             <div className="shrink-0">
                                 {is_valid ? (
-                                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[10px] font-bold text-[#64d8c1] bg-[#123b38] border border-[#64d8c1]/30">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#64d8c1]"></span> Valid (Total Wj = 1)
+                                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[10px] font-bold text-coop-teal bg-coop-teal/10 border border-coop-teal/30">
+                                        <span className="h-1.5 w-1.5 rounded-full bg-coop-teal"></span> Valid (Total Wj = 1)
                                     </span>
                                 ) : (
                                     <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[10px] font-bold text-rose-400 bg-rose-500/10 border border-rose-500/25">
@@ -178,39 +178,39 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
                         </div>
                         <div className="p-5 pt-3 flex-1">
                             {current_weights.length === 0 ? (
-                                <div className="text-center py-12 text-[#8294aa] text-sm">
+                                <div className="text-center py-12 text-coop-muted-dark text-sm">
                                     Belum ada bobot kriteria yang disimpan. Silakan lakukan pengisian di panel sebelah kanan.
                                 </div>
                             ) : (
-                                <div className="overflow-x-auto rounded-md border border-[#4f657a] bg-[#0b1020]">
+                                <div className="overflow-x-auto rounded-md border border-coop-border bg-coop-bg">
                                     <Table>
-                                        <TableHeader className="bg-[#111827]">
-                                            <TableRow className="border-[#4f657a] hover:bg-transparent">
-                                                <TableHead className="w-16 text-center text-xs font-bold uppercase tracking-wider text-[#b2bfca] py-3">Rank</TableHead>
-                                                <TableHead className="text-xs font-bold uppercase tracking-wider text-[#b2bfca] py-3">Kriteria</TableHead>
-                                                <TableHead className="text-center text-xs font-bold uppercase tracking-wider text-[#b2bfca] py-3">Sj</TableHead>
-                                                <TableHead className="text-center text-xs font-bold uppercase tracking-wider text-[#b2bfca] py-3">Kj</TableHead>
-                                                <TableHead className="text-center text-xs font-bold uppercase tracking-wider text-[#b2bfca] py-3">Qj</TableHead>
-                                                <TableHead className="text-center bg-[#123b38] text-xs font-bold uppercase tracking-wider text-[#64d8c1] py-3 border-l border-[#64d8c1]/25">Wj (Bobot)</TableHead>
+                                        <TableHeader className="bg-coop-card">
+                                            <TableRow className="border-coop-border hover:bg-transparent">
+                                                <TableHead className="w-16 text-center text-xs font-bold uppercase tracking-wider text-coop-muted-light py-3">Rank</TableHead>
+                                                <TableHead className="text-xs font-bold uppercase tracking-wider text-coop-muted-light py-3">Kriteria</TableHead>
+                                                <TableHead className="text-center text-xs font-bold uppercase tracking-wider text-coop-muted-light py-3">Sj</TableHead>
+                                                <TableHead className="text-center text-xs font-bold uppercase tracking-wider text-coop-muted-light py-3">Kj</TableHead>
+                                                <TableHead className="text-center text-xs font-bold uppercase tracking-wider text-coop-muted-light py-3">Qj</TableHead>
+                                                <TableHead className="text-center bg-coop-teal/10 text-xs font-bold uppercase tracking-wider text-coop-teal py-3 border-l border-coop-teal/25">Wj (Bobot)</TableHead>
                                             </TableRow>
                                         </TableHeader>
                                         <TableBody>
                                             {current_weights.map((w) => (
-                                                <TableRow key={w.id} className="border-[#4f657a] hover:bg-[#152133]/40 transition-colors">
-                                                    <TableCell className="text-center font-extrabold text-[#b2bfca] bg-[#111827]/30 py-2.5">{w.rank_order}</TableCell>
+                                                <TableRow key={w.id} className="border-coop-border hover:bg-coop-highlight/40 transition-colors">
+                                                    <TableCell className="text-center font-extrabold text-coop-muted-light bg-coop-card/30 py-2.5">{w.rank_order}</TableCell>
                                                     <TableCell className="py-2.5">
-                                                        <div className="font-semibold text-slate-100 text-sm">{w.criteria.name}</div>
-                                                        <div className="text-[10px] text-[#8294aa] font-mono mt-0.5">{w.criteria.code} | {w.criteria.type}</div>
+                                                        <div className="font-semibold text-coop-text text-sm">{w.criteria.name}</div>
+                                                        <div className="text-[10px] text-coop-muted-dark font-mono mt-0.5">{w.criteria.code} | {w.criteria.type}</div>
                                                     </TableCell>
-                                                    <TableCell className="text-center text-[#b2bfca] font-mono text-xs py-2.5">{w.sj.toFixed(4)}</TableCell>
-                                                    <TableCell className="text-center text-[#b2bfca] font-mono text-xs py-2.5">{w.kj.toFixed(4)}</TableCell>
-                                                    <TableCell className="text-center text-[#b2bfca] font-mono text-xs py-2.5">{w.qj.toFixed(4)}</TableCell>
-                                                    <TableCell className="text-center bg-[#123b38] text-[#64d8c1] font-bold font-mono text-xs py-2.5 border-l border-[#64d8c1]/25">{w.weight.toFixed(4)}</TableCell>
+                                                    <TableCell className="text-center text-coop-muted-light font-mono text-xs py-2.5">{w.sj.toFixed(4)}</TableCell>
+                                                    <TableCell className="text-center text-coop-muted-light font-mono text-xs py-2.5">{w.kj.toFixed(4)}</TableCell>
+                                                    <TableCell className="text-center text-coop-muted-light font-mono text-xs py-2.5">{w.qj.toFixed(4)}</TableCell>
+                                                    <TableCell className="text-center bg-coop-teal/10 text-coop-teal font-bold font-mono text-xs py-2.5 border-l border-coop-teal/25">{w.weight.toFixed(4)}</TableCell>
                                                 </TableRow>
                                             ))}
-                                            <TableRow className="bg-[#0b1020] border-[#4f657a] font-bold text-white hover:bg-[#0b1020]">
-                                                <TableCell colSpan={5} className="text-right py-3 pr-4 text-xs font-bold uppercase tracking-wider text-[#b2bfca]">Total Bobot (SUM Wj):</TableCell>
-                                                <TableCell className="text-center text-[#64d8c1] font-bold text-sm py-3 border-l border-[#64d8c1]/25 font-mono">{totalWeight.toFixed(2)}</TableCell>
+                                            <TableRow className="bg-coop-bg border-coop-border font-bold text-coop-text hover:bg-coop-bg">
+                                                <TableCell colSpan={5} className="text-right py-3 pr-4 text-xs font-bold uppercase tracking-wider text-coop-muted-light">Total Bobot (SUM Wj):</TableCell>
+                                                <TableCell className="text-center text-coop-teal font-bold text-sm py-3 border-l border-coop-teal/25 font-mono">{totalWeight.toFixed(2)}</TableCell>
                                             </TableRow>
                                         </TableBody>
                                     </Table>
@@ -220,12 +220,12 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
                     </div>
 
                     {/* Pakar Input Panel */}
-                    <div className="rounded bg-[#111827] border border-[#4f657a]  flex flex-col">
-                        <div className="border-b border-[#4f657a] p-5">
-                            <h3 className="text-base font-bold text-white flex items-center gap-2">
-                                <ArrowDownAZ className="h-4.5 w-4.5 text-[#64d8c1]" /> Atur Tingkat Kepentingan (Pakar)
+                    <div className="rounded bg-coop-card border border-coop-border  flex flex-col">
+                        <div className="border-b border-coop-border p-5">
+                            <h3 className="text-base font-bold text-coop-text flex items-center gap-2">
+                                <ArrowDownAZ className="h-4.5 w-4.5 text-coop-teal" /> Atur Tingkat Kepentingan (Pakar)
                             </h3>
-                            <p className="text-xs text-[#b2bfca] mt-0.5">
+                            <p className="text-xs text-coop-muted-light mt-0.5">
                                 Hanya Pakar/Kepala Koperasi atau Admin yang dapat mengubah prioritas kriteria.
                             </p>
                         </div>
@@ -240,13 +240,13 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
                                     </p>
                                 </div>
                             ) : active_criteria.length === 0 ? (
-                                <div className="text-center py-12 text-[#8294aa] text-sm">
+                                <div className="text-center py-12 text-coop-muted-dark text-sm">
                                     Tidak ada kriteria aktif. Harap aktifkan kriteria di menu Data Kriteria terlebih dahulu.
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-4">
                                     <div className="space-y-2">
-                                        <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-[#b2bfca] px-3.5 py-2 bg-[#0b1020] rounded-md border border-[#4f657a] mb-1">
+                                        <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-coop-muted-light px-3.5 py-2 bg-coop-bg rounded-md border border-coop-border mb-1">
                                             <span>Kriteria (Diurutkan otomatis)</span>
                                             <div className="flex items-center gap-6">
                                                 <span className="w-24 text-center">Prioritas</span>
@@ -261,13 +261,13 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
                                                 key={item.criteria_id} 
                                                 className={`flex items-center justify-between p-3 rounded-md border transition-all duration-300 ${
                                                     item.rank_order === 1 
-                                                        ? 'bg-[#123b38] border-[#64d8c1]/30' 
-                                                        : 'bg-[#0b1020] border-[#4f657a] hover:border-[#6f8295]'
+                                                        ? 'bg-coop-teal/10 border-coop-teal/30' 
+                                                        : 'bg-coop-bg border-coop-border hover:border-coop-border'
                                                 }`}
                                             >
                                                 <div className="flex-1 min-w-0 pr-4">
-                                                    <span className="font-bold text-sm text-slate-100 block truncate">{item.name}</span>
-                                                    <span className="font-mono text-[10px] text-[#64d8c1] uppercase mt-0.5 inline-block">{item.code}</span>
+                                                    <span className="font-bold text-sm text-coop-text block truncate">{item.name}</span>
+                                                    <span className="font-mono text-[10px] text-coop-teal uppercase mt-0.5 inline-block">{item.code}</span>
                                                 </div>
 
                                                 <div className="flex items-center gap-4 shrink-0">
@@ -276,10 +276,11 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
                                                         <select
                                                             value={item.rank_order}
                                                             onChange={e => handleRankChange(item.criteria_id, parseInt(e.target.value))}
-                                                            className="w-full h-9 px-2 rounded-md border border-[#4f657a] bg-[#0b1020] text-slate-100 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#d6b45f]/10 focus:border-[#d6b45f] transition duration-200"
+                                                            className="w-full h-9 px-2 rounded-md border border-coop-border bg-coop-bg text-coop-text text-xs font-bold focus:outline-none focus:ring-2 focus:ring-coop-gold/10 focus:border-coop-gold transition duration-200"
+                                                            aria-label={`Prioritas peringkat untuk kriteria ${item.name}`}
                                                         >
                                                             {active_criteria.map((_, i) => (
-                                                                <option key={i} value={i + 1} className="bg-[#0b1020] text-slate-100 font-bold">
+                                                                <option key={i} value={i + 1} className="bg-coop-bg text-coop-text font-bold">
                                                                     Rank {i + 1}
                                                                 </option>
                                                             ))}
@@ -293,7 +294,8 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
                                                                 type="text"
                                                                 value="0.0 (Utama)"
                                                                 disabled
-                                                                className="h-9 bg-[#111827]/20 border-[#4f657a] text-[#64d8c1]/50 text-[10px] text-center rounded-md font-bold"
+                                                                className="h-9 bg-coop-card/20 border-coop-border text-coop-teal/50 text-[10px] text-center rounded-md font-bold"
+                                                                aria-label={`Nilai Sj untuk kriteria utama ${item.name}`}
                                                             />
                                                         ) : (
                                                             <Input
@@ -303,9 +305,10 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
                                                                 max="1"
                                                                 value={item.sj}
                                                                 onChange={e => handleSjChange(item.criteria_id, e.target.value)}
-                                                                className="h-9 bg-[#0b1020] border-[#4f657a] text-slate-100 text-center text-xs rounded-md focus-visible:ring-[#d6b45f]/15 focus-visible:ring-2 focus-visible:border-[#d6b45f] font-bold font-mono transition duration-200"
+                                                                className="h-9 bg-coop-bg border-coop-border text-coop-text text-center text-xs rounded-md focus-visible:ring-coop-gold/15 focus-visible:ring-2 focus-visible:border-coop-gold font-bold font-mono transition duration-200"
                                                                 placeholder="Misal: 0.10"
                                                                 required
+                                                                aria-label={`Nilai Sj untuk kriteria ${item.name}`}
                                                             />
                                                         )}
                                                     </div>
@@ -323,7 +326,7 @@ export default function Index({ current_weights, active_criteria, is_valid }: Sw
                                     <Button
                                         type="submit"
                                         disabled={processing}
-                                        className="w-full bg-[#d6b45f] hover:bg-[#f2d98a] text-[#0b1020] rounded-md py-3 font-bold transition duration-300 border border-[#aa7f31] "
+                                        className="w-full bg-coop-gold hover:bg-coop-gold-hover text-coop-bg rounded-md py-3 font-bold transition duration-300 border border-[#aa7f31] "
                                     >
                                         {processing ? 'Menghitung...' : 'Hitung & Simpan Pembobotan'}
                                     </Button>

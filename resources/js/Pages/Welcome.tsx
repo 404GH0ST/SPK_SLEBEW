@@ -70,24 +70,24 @@ export default function Welcome({
     return (
         <>
             <Head title="Sistem Pendukung Keputusan Koperasi" />
-            <div id="top" className="landing-premium min-h-screen overflow-x-hidden text-slate-100 font-sans antialiased selection:bg-[#d6b45f]/30 selection:text-white">
+            <div id="top" className="landing-premium min-h-screen overflow-x-hidden text-coop-text font-sans antialiased selection:bg-coop-gold/30 selection:text-coop-text">
                 <style>{`
                     .landing-premium {
-                        --ink: #0b1020;
-                        --ink-2: #111827;
-                        --panel: #152133;
-                        --panel-teal: #123b38;
-                        --line: #3a4a5f;
-                        --line-strong: #4f657a;
-                        --champagne: #d6b45f;
+                        --ink: var(--coop-bg);
+                        --ink-2: var(--coop-card);
+                        --panel: var(--coop-highlight);
+                        --panel-teal: color-mix(in srgb, var(--coop-teal) 15%, transparent);
+                        --line: var(--coop-border);
+                        --line-strong: var(--coop-border);
+                        --champagne: var(--coop-gold);
                         --champagne-edge: #aa7f31;
-                        --champagne-bright: #f2d98a;
-                        --teal: #64d8c1;
-                        --blue: #88a4ff;
-                        --muted: #b2bfca;
-                        --muted-strong: #d7e0e8;
-                        --muted-soft: #97a6b8;
-                        --muted-blue: #aebfe8;
+                        --champagne-bright: var(--coop-gold-hover);
+                        --teal: var(--coop-teal);
+                        --blue: var(--coop-blue);
+                        --muted: var(--coop-muted-light);
+                        --muted-strong: var(--coop-text);
+                        --muted-soft: var(--coop-muted-dark);
+                        --muted-blue: var(--coop-blue);
                         background: var(--ink);
                     }
 
@@ -151,7 +151,7 @@ export default function Welcome({
                                 <Calculator className="h-4.5 w-4.5" />
                             </div>
                             <div>
-                                <div className="text-sm font-bold tracking-tight text-white">SPK Kelayakan</div>
+                                <div className="text-sm font-bold tracking-tight text-coop-text">SPK Kelayakan</div>
                                 <div className="text-[11px] font-medium text-[var(--teal)]">SWARA + MARCOS</div>
                             </div>
                         </div>
@@ -168,13 +168,13 @@ export default function Welcome({
                                 <>
                                     <Link
                                         href={route('login')}
-                                        className="inline-flex min-h-11 items-center rounded-md px-3 text-xs font-semibold text-[var(--muted-strong)] transition hover:bg-[var(--panel)] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--champagne-bright)]"
+                                        className="inline-flex min-h-11 items-center rounded-md px-3 text-xs font-semibold text-[var(--muted-strong)] transition hover:bg-[var(--panel)] hover:text-coop-text focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--champagne-bright)]"
                                     >
                                         Masuk
                                     </Link>
                                     <Link
                                         href={route('register')}
-                                        className="hidden min-h-11 items-center rounded-md border border-[color:var(--line-strong)] bg-[var(--ink-2)] px-4 text-xs font-semibold text-slate-100 transition hover:border-[var(--blue)] hover:bg-[var(--panel)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--champagne-bright)] sm:inline-flex"
+                                        className="hidden min-h-11 items-center rounded-md border border-[color:var(--line-strong)] bg-[var(--ink-2)] px-4 text-xs font-semibold text-coop-text transition hover:border-[var(--blue)] hover:bg-[var(--panel)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--champagne-bright)] sm:inline-flex"
                                     >
                                         Daftar akun
                                     </Link>
@@ -194,7 +194,7 @@ export default function Welcome({
                                 </div>
 
                                 <div className="space-y-4">
-                                    <h1 className="max-w-4xl text-balance text-4xl font-black leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-6xl">
+                                    <h1 className="max-w-4xl text-balance text-4xl font-black leading-[1.04] tracking-tight text-coop-text sm:text-5xl lg:text-6xl">
                                         Dari kriteria nasabah ke verdict pinjaman.
                                     </h1>
                                     <p className="max-w-2xl text-pretty text-base leading-7 text-[var(--muted)]">
@@ -240,7 +240,7 @@ export default function Welcome({
                                 <div className="mb-5 flex flex-col gap-3 border-b border-[color:var(--line)] pb-5 sm:flex-row sm:items-center sm:justify-between">
                                     <div>
                                         <div className="text-xs font-bold text-[var(--champagne-bright)]">Loan Decision Map</div>
-                                        <div className="mt-1 text-xl font-black tracking-tight text-white">Kriteria masuk, bobot bergerak, verdict terkunci</div>
+                                        <div className="mt-1 text-xl font-black tracking-tight text-coop-text">Kriteria masuk, bobot bergerak, verdict terkunci</div>
                                     </div>
                                     <div className="inline-flex min-h-11 w-fit items-center gap-2 rounded-md border border-[color:var(--champagne)]/60 bg-[var(--panel)] px-3 py-1.5 text-[11px] font-bold text-[var(--champagne-bright)]">
                                         <span className="h-1.5 w-1.5 rounded-full bg-[var(--champagne-bright)]" />
@@ -266,7 +266,7 @@ export default function Welcome({
                                                             <span className="font-mono text-xs font-black text-[var(--champagne-bright)]">{node.code}</span>
                                                             <span className="text-[10px] font-bold text-[var(--muted-soft)]">{node.kind}</span>
                                                         </div>
-                                                        <div className="mt-2 truncate text-xs font-bold text-white">{node.label}</div>
+                                                        <div className="mt-2 truncate text-xs font-bold text-coop-text">{node.label}</div>
                                                     </div>
                                                 ))}
                                             </div>
@@ -276,7 +276,7 @@ export default function Welcome({
                                             <div className="flex items-center justify-between">
                                                 <div>
                                                     <div className="text-xs font-bold text-[var(--champagne)]">SWARA core</div>
-                                                    <div className="mt-1 text-sm font-black text-white">Bobot final</div>
+                                                    <div className="mt-1 text-sm font-black text-coop-text">Bobot final</div>
                                                 </div>
                                                 <Scale className="h-5 w-5 text-[var(--champagne-bright)]" />
                                             </div>
@@ -291,7 +291,7 @@ export default function Welcome({
                                                                 style={{ width: `${92 - index * 13}%` }}
                                                             />
                                                         </div>
-                                                        <span className="text-right font-mono text-xs font-black text-white">{item.weight}</span>
+                                                        <span className="text-right font-mono text-xs font-black text-coop-text">{item.weight}</span>
                                                     </div>
                                                 ))}
                                             </div>
@@ -311,7 +311,7 @@ export default function Welcome({
                                             <div className="flex items-center justify-between">
                                                 <div>
                                                     <div className="text-xs font-bold text-[var(--muted-blue)]">MARCOS verdict</div>
-                                                    <div className="mt-1 text-sm font-black text-white">Ranking kelayakan</div>
+                                                    <div className="mt-1 text-sm font-black text-coop-text">Ranking kelayakan</div>
                                                 </div>
                                                 <UserCheck className="h-5 w-5 text-[var(--blue)]" />
                                             </div>
@@ -327,7 +327,7 @@ export default function Welcome({
                                                             </div>
                                                             <div className="min-w-0">
                                                                 <div className="flex min-w-0 items-baseline justify-between gap-3">
-                                                                    <div className="min-w-0 truncate text-sm font-bold text-white">{row.name}</div>
+                                                                    <div className="min-w-0 truncate text-sm font-bold text-coop-text">{row.name}</div>
                                                                     <div className="shrink-0 font-mono text-sm font-black text-[var(--teal)]">{row.score}</div>
                                                                 </div>
                                                                 <div className="mt-0.5 text-[11px] font-medium text-[var(--muted-soft)]">{row.status}</div>
@@ -356,7 +356,7 @@ export default function Welcome({
                     <section id="method" className="border-t border-[color:var(--line)] bg-[var(--ink-2)] px-5 py-10 sm:px-8">
                         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.78fr_1.22fr]">
                             <div>
-                                <h2 className="text-balance text-2xl font-black tracking-tight text-white sm:text-3xl">
+                                <h2 className="text-balance text-2xl font-black tracking-tight text-coop-text sm:text-3xl">
                                     Metode terlihat sebagai alur keputusan.
                                 </h2>
                                 <p className="mt-3 max-w-xl text-sm leading-6 text-[var(--muted)]">
@@ -371,7 +371,7 @@ export default function Welcome({
                                     return (
                                         <article key={step.title} className="rounded-lg border border-[color:var(--line)] bg-[var(--ink)] p-4">
                                             <Icon className="h-5 w-5 text-[var(--champagne-bright)]" />
-                                            <h3 className="mt-4 text-sm font-bold text-white">{step.title}</h3>
+                                            <h3 className="mt-4 text-sm font-bold text-coop-text">{step.title}</h3>
                                             <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{step.text}</p>
                                         </article>
                                     );
@@ -384,9 +384,6 @@ export default function Welcome({
                 <footer className="border-t border-[color:var(--line)] bg-[var(--ink)] px-5 py-6 sm:px-8">
                     <div className="mx-auto flex max-w-7xl flex-col gap-2 text-xs text-[var(--muted-soft)] sm:flex-row sm:items-center sm:justify-between">
                         <div>SPK Kelayakan Koperasi, SWARA + MARCOS.</div>
-                        <div className="font-mono">
-                            Laravel v{laravelVersion} / PHP v{phpVersion}
-                        </div>
                     </div>
                 </footer>
             </div>
